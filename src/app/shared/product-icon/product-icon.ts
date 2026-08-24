@@ -41,21 +41,7 @@ import { CommonModule } from '@angular/common';
       </ng-container>
     </svg>
   `,
-  styles: [
-    `
-      .ira-icon {
-        width: 64px;
-        height: 64px;
-        stroke: var(--ira-forest);
-        stroke-width: 3;
-        fill: rgba(110, 122, 84, 0.12);
-      }
-      .ira-icon.is-lg { width: 96px; height: 96px; }
-      .ira-icon .line-thin { fill: none; stroke-width: 2; opacity: 0.55; }
-      .ira-icon .line-soft { fill: none; stroke-width: 2; opacity: 0.4; }
-      .ira-icon .flame { fill: var(--ira-honey); stroke: none; }
-    `
-  ]
+  styleUrl: './product-icon.scss'
 })
 export class ProductIcon {
   @Input() icon: 'bar' | 'bottle' | 'jar' | 'vase' | 'candle' | 'kit' = 'bar';
