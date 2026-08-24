@@ -1,0 +1,54 @@
+.ira-about-hero__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 3rem;
+  align-items: center;
+
+  h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin: 0.75rem 0 1.1rem; }
+  p { color: rgba(34, 39, 29, 0.78); max-width: 540px; }
+}
+
+.ira-about-hero__stamp {
+  background: var(--ira-card);
+  border: 1px solid var(--ira-line);
+  border-radius: var(--r-lg);
+  padding: 2rem;
+  text-align: center;
+
+  p { font-size: 0.9rem; margin-top: 0.75rem; color: var(--ira-sage); }
+}
+
+@media (max-width: 900px) {
+  .ira-about-hero__grid { grid-template-columns: 1fr; }
+}
+
+.ira-about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  h2 { font-size: 1.6rem; margin: 0.6rem 0 0.85rem; }
+  p { color: rgba(245, 241, 228, 0.82); font-size: 0.95rem; }
+}
+
+@media (max-width: 767.98px) {
+  .ira-about-story { grid-template-columns: 1fr; }
+}
+
+.ira-value {
+  height: 100%;
+  padding: 1.75rem;
+  background: var(--ira-card);
+  border: 1px solid var(--ira-line);
+  border-radius: var(--r-lg);
+
+  i { font-size: 1.6rem; color: var(--ira-honey); }
+  h3 { font-size: 1.05rem; margin: 0.75rem 0 0.5rem; }
+  p { font-size: 0.88rem; color: rgba(34, 39, 29, 0.72); }
+}
+
+.ira-about-cta {
+  background: linear-gradient(150deg, #e9e1c9, #dcd2b3);
+  h2 { font-size: 1.9rem; margin-bottom: 0.6rem; }
+  p { color: rgba(34, 39, 29, 0.75); margin-bottom: 1.75rem; }
+}

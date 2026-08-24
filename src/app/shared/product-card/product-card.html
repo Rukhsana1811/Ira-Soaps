@@ -1,0 +1,33 @@
+<article class="card-ira ira-product-card">
+  <div class="ira-product-card__media">
+    <app-product-icon [icon]="product.icon" size="lg"></app-product-icon>
+    <span class="batch-tag" *ngIf="product.hasLiveSession">
+      <i class="bi bi-camera-video"></i>&nbsp;Live session available
+    </span>
+  </div>
+
+  <div class="ira-product-card__body">
+    <span class="eyebrow">{{ product.tagline }}</span>
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+
+    <ul class="ira-product-card__ingredients">
+      <li *ngFor="let ing of product.ingredients.slice(0, 3)">{{ ing }}</li>
+    </ul>
+
+    <div class="ira-product-card__footer">
+      <div class="ira-product-card__price">
+        <strong>&#8377;{{ product.price }}</strong>
+        <span>{{ product.size }}</span>
+      </div>
+      <a
+        class="btn-ira-whatsapp"
+        [href]="whatsapp.productEnquiryLink(product.name)"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="bi bi-whatsapp"></i> Enquire
+      </a>
+    </div>
+  </div>
+</article>

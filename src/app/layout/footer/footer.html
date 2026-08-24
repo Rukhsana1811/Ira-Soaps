@@ -1,0 +1,50 @@
+<footer class="ira-footer">
+  <div class="container-ira ira-footer__grid">
+    <div class="ira-footer__brand">
+      <span class="ira-nav__mark d-inline-flex">Ira</span>
+      <h3 class="mt-3">Ira Soaps</h3>
+      <p>
+        Small-batch, chemical-free soaps, shampoo bars, face wash and body wash — plus
+        hand-poured concrete art. Made in small curing batches, never mass-produced.
+      </p>
+      <a class="btn-ira-whatsapp" [href]="whatsapp.generalLink()" target="_blank" rel="noopener">
+        <i class="bi bi-whatsapp"></i> +91 77174 71906
+      </a>
+    </div>
+
+    <div class="ira-footer__col">
+      <span class="eyebrow">Explore</span>
+      <a routerLink="/products">Shop all products</a>
+      <a routerLink="/live-sessions">Live making sessions</a>
+      <a routerLink="/about">Our story</a>
+      <a routerLink="/contact">Contact &amp; visits</a>
+    </div>
+
+    <div class="ira-footer__col">
+      <span class="eyebrow">Categories</span>
+      <a routerLink="/products" [queryParams]="{ category: 'soaps' }">Soaps</a>
+      <a routerLink="/products" [queryParams]="{ category: 'shampoo' }">Shampoo</a>
+      <a routerLink="/products" [queryParams]="{ category: 'face-wash' }">Face wash</a>
+      <a routerLink="/products" [queryParams]="{ category: 'shower-gel' }">Shower Gel / Body wash</a>
+      <a routerLink="/products" [queryParams]="{ category: 'concrete-art' }">Concrete art</a>
+    </div>
+
+    <div class="ira-footer__col">
+      <span class="eyebrow">Say hello</span>
+      <a href="mailto:hello@irasoaps.com"><i class="bi bi-envelope"></i>&nbsp; iraasoaps&#64;gmail.com</a>
+      <a [href]="whatsapp.generalLink()" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i>&nbsp; WhatsApp us</a>
+      <div class="ira-footer__social">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ira-footer__bottom">
+    <div class="container-ira d-flex flex-wrap justify-content-between gap-2">
+      <span>&copy; {{ year }} Ira Soaps. All batches handmade in small quantities.</span>
+      <span>Cruelty-free &middot; No parabens &middot; No sulphates &middot; No synthetic fragrance</span>
+    </div>
+  </div>
+</footer>

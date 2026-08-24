@@ -1,0 +1,67 @@
+<section class="ira-contact-hero">
+  <div class="container-ira">
+    <span class="eyebrow">Get in touch</span>
+    <h1>We reply fastest on WhatsApp</h1>
+    <p>Questions about ingredients, orders, or booking a live session — message us directly, or fill in the note below and we'll open it as a WhatsApp chat for you.</p>
+  </div>
+</section>
+
+<section class="pt-0">
+  <div class="container-ira ira-contact-grid">
+    <div class="ira-contact-info">
+      <a class="ira-contact-card" [href]="whatsapp.generalLink()" target="_blank" rel="noopener">
+        <i class="bi bi-whatsapp"></i>
+        <div>
+          <span class="eyebrow">WhatsApp</span>
+          <strong>+91 77174 71906</strong>
+        </div>
+      </a>
+
+      <a class="ira-contact-card" href="mailto:hello@irasoaps.com">
+        <i class="bi bi-envelope"></i>
+        <div>
+          <span class="eyebrow">Email</span>
+          <strong>hello&#64;irasoaps.com</strong>
+        </div>
+      </a>
+
+      <div class="ira-contact-card">
+        <i class="bi bi-geo-alt"></i>
+        <div>
+          <span class="eyebrow">Workshop</span>
+          <strong>Chandigarh, India</strong>
+          <p>Visits by appointment — message us to schedule one.</p>
+        </div>
+      </div>
+
+      <div class="ira-contact-card">
+        <i class="bi bi-clock"></i>
+        <div>
+          <span class="eyebrow">Hours</span>
+          <strong>Mon–Sat, 10 AM – 7 PM IST</strong>
+        </div>
+      </div>
+    </div>
+
+    <form class="ira-contact-form" (ngSubmit)="sendOnWhatsapp()">
+      <span class="eyebrow">Send us a note</span>
+      <h2 class="mb-4">We'll open it in WhatsApp</h2>
+
+      <label for="name">Your name</label>
+      <input id="name" type="text" name="name" [(ngModel)]="name" placeholder="e.g. Simran Kaur" required />
+
+      <label for="interest">What are you interested in?</label>
+      <select id="interest" name="interest" [(ngModel)]="interest">
+        <option *ngFor="let i of interests" [value]="i">{{ i }}</option>
+      </select>
+
+      <label for="message">Your message</label>
+      <textarea id="message" name="message" rows="4" [(ngModel)]="message" placeholder="Tell us what you'd like to know..." required></textarea>
+
+      <button type="submit" class="btn-ira-whatsapp" [disabled]="!isValid">
+        <i class="bi bi-whatsapp"></i> Continue on WhatsApp
+      </button>
+      <p class="ira-contact-form__hint">This opens WhatsApp with your note pre-filled — nothing is sent from this page directly.</p>
+    </form>
+  </div>
+</section>

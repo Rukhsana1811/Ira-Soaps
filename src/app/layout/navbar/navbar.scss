@@ -1,0 +1,126 @@
+.ira-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(245, 241, 228, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ira-line);
+}
+
+.ira-nav__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+}
+
+.ira-nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ira-nav__mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  background: var(--ira-forest);
+  color: var(--ira-cream);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ira-nav__word {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: var(--ira-ink);
+  display: flex;
+  flex-direction: column;
+
+  small {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ira-sage);
+    font-weight: 400;
+  }
+}
+
+.ira-nav__toggle {
+  display: none;
+  border: 1px solid var(--ira-line);
+  background: transparent;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--ira-ink);
+}
+
+.ira-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+
+  a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--ira-ink);
+    position: relative;
+    padding: 0.25rem 0;
+  }
+
+  a:not(.ira-nav__cta)::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: -2px;
+    height: 2px;
+    background: var(--ira-honey);
+    transition: right 0.25s ease;
+  }
+  a.active:not(.ira-nav__cta)::after,
+  a:not(.ira-nav__cta):hover::after {
+    right: 0;
+  }
+}
+
+.ira-nav__cta {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 991.98px) {
+  .ira-nav__toggle { display: inline-flex; }
+
+  .ira-nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--ira-cream);
+    border-bottom: 1px solid var(--ira-line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .ira-nav__links.is-open { max-height: 420px; }
+  .ira-nav__links a {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid var(--ira-line);
+  }
+  .ira-nav__cta { margin: 0.75rem 1.25rem 1.1rem; }
+}

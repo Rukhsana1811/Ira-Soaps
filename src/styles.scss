@@ -1,0 +1,180 @@
+// =========================================================
+// IRA SOAPS — Global design tokens
+// Palette: cured-clay / botanical, not the generic AI cream+terracotta.
+// =========================================================
+:root {
+  // -- colour --
+  --ira-cream:    #F5F1E4; // canvas / curing-table linen
+  --ira-ink:      #22271D; // near-black olive ink
+  --ira-forest:   #38452F; // deep botanical green (primary)
+  --ira-sage:     #6E7A54; // muted sage (secondary / accent)
+  --ira-clay:     #A99C86; // wet-concrete grey-tan
+  --ira-honey:    #CE9A3E; // warm honey — CTA accent
+  --ira-line:     rgba(34, 39, 29, 0.14);
+  --ira-card:     #FBF8EF;
+
+  // -- type --
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, Segoe UI, sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, monospace;
+
+  // -- radius / shadow --
+  --r-sm: 6px;
+  --r-md: 14px;
+  --r-lg: 28px;
+  --shadow-soft: 0 18px 40px -22px rgba(34, 39, 29, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ira-cream);
+  color: var(--ira-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ira-ink);
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ira-forest);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: var(--ira-honey);
+  display: inline-block;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container-ira {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section { padding: 5.5rem 0; }
+@media (max-width: 767.98px) {
+  section { padding: 3.25rem 0; }
+}
+
+// -- buttons ---------------------------------------------------
+.btn-ira-primary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  background: var(--ira-forest);
+  color: var(--ira-cream);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow-soft);
+}
+.btn-ira-primary:hover { background: var(--ira-sage); transform: translateY(-2px); color: var(--ira-cream); }
+
+.btn-ira-outline {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--ira-ink);
+  border-radius: 999px;
+  padding: 0.8rem 1.7rem;
+  background: transparent;
+  color: var(--ira-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.25s ease;
+}
+.btn-ira-outline:hover { background: var(--ira-ink); color: var(--ira-cream); }
+
+.btn-ira-whatsapp {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.35rem;
+  background: #2f6b4f;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-ira-whatsapp:hover { background: #24543e; color: #fff; transform: translateY(-1px); }
+
+// -- signature: wire-cut wavy divider ---------------------------
+// Soaps are cut from a loaf with a wavy wire cutter; concrete is
+// poured & struck level. This zig edge is the brand's recurring mark.
+.wire-cut {
+  position: relative;
+  height: 34px;
+  width: 100%;
+  overflow: hidden;
+}
+.wire-cut svg { display: block; width: 100%; height: 100%; }
+
+.section-alt {
+  background: var(--ira-forest);
+  color: var(--ira-cream);
+}
+.section-alt h1, .section-alt h2, .section-alt h3 { color: var(--ira-cream); }
+.section-alt .eyebrow { color: var(--ira-honey); }
+.section-alt .eyebrow::before { background: var(--ira-cream); }
+
+.card-ira {
+  background: var(--ira-card);
+  border: 1px solid var(--ira-line);
+  border-radius: var(--r-lg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-ira:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+
+.batch-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ira-forest);
+  background: rgba(56, 69, 47, 0.08);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  display: inline-block;
+}
+
+::selection { background: var(--ira-honey); color: var(--ira-ink); }
+
+// focus visibility (accessibility floor)
+a:focus-visible, button:focus-visible, .nav-link:focus-visible {
+  outline: 2px solid var(--ira-honey);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

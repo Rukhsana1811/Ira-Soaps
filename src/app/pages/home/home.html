@@ -1,0 +1,153 @@
+<!-- HERO -->
+<section class="ira-hero">
+  <div class="container-ira ira-hero__grid">
+    <div class="ira-hero__copy">
+      <span class="eyebrow">Small-batch &middot; Online workshop</span>
+      <h1>
+        Soap poured slowly,<br />
+        <em>cut by hand,</em><br />
+        never rushed.
+      </h1>
+      <p class="ira-hero__lead">
+        Ira Soaps makes chemical-free soaps, shampoo bars, face wash and body wash — plus
+        hand-poured concrete art. Every piece is mixed, cured and finished by hand, in
+        batches small enough to know each one by its cut.
+      </p>
+      <div class="ira-hero__ctas">
+        <a routerLink="/products" class="btn-ira-primary">
+          <i class="bi bi-bag-heart"></i> Shop the batch
+        </a>
+        <a routerLink="/live-sessions" class="btn-ira-outline">
+          <i class="bi bi-camera-video"></i> Join a live session
+        </a>
+      </div>
+      <div class="ira-hero__badges">
+        <span><i class="bi bi-check2-circle"></i> No parabens</span>
+        <span><i class="bi bi-check2-circle"></i> No sulphates</span>
+        <span><i class="bi bi-check2-circle"></i> Cruelty-free</span>
+        <span><i class="bi bi-check2-circle"></i> Handmade in small batches</span>
+      </div>
+    </div>
+
+    <div class="ira-hero__visual" aria-hidden="true">
+      <div class="ira-hero__loaf">
+        <div class="ira-hero__bar" *ngFor="let i of [1,2,3,4,5]" [style.--i]="i"></div>
+      </div>
+      <span class="batch-tag ira-hero__stamp">BATCH №24 &middot; CURING SINCE AUG 2026</span>
+    </div>
+  </div>
+</section>
+
+<app-wire-cut bg="var(--ira-cream)" fg="var(--ira-forest)"></app-wire-cut>
+
+<!-- CATEGORY SHOWCASE -->
+<section class="section-alt">
+  <div class="container-ira">
+    <span class="eyebrow">What we make</span>
+    <h2 class="mb-4">Five things, made properly</h2>
+    <div class="row g-4 ira-cat-grid">
+      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let cat of categories">
+        <a class="ira-cat-card" [routerLink]="['/products']" [queryParams]="{ category: cat.id }">
+          <h3>{{ cat.label }}</h3>
+          <p>{{ cat.blurb }}</p>
+          <span class="ira-cat-card__go">Browse <i class="bi bi-arrow-up-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-wire-cut bg="var(--ira-forest)" fg="var(--ira-cream)"></app-wire-cut>
+
+<!-- FEATURED PRODUCTS -->
+<section>
+  <div class="container-ira">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+      <div>
+        <span class="eyebrow">Currently curing</span>
+        <h2>Customer favourites</h2>
+      </div>
+      <a routerLink="/products" class="btn-ira-outline">See all products <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let product of featured">
+        <!-- <app-product-card [product]="product"></app-product-card> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE SESSION TEASER -->
+<section class="ira-live-teaser">
+  <div class="container-ira ira-live-teaser__grid">
+    <div>
+      <span class="eyebrow">Watch it made</span>
+      <h2>Book a live making session</h2>
+      <p>
+        Every product on our shelf started as a live demonstration in our workshop. Join a
+        session over video call and watch your soap, shampoo bar or concrete vase get mixed
+        and poured in real time — ask questions, request a custom batch, or just watch the
+        process from oil to bar.
+      </p>
+      <div class="d-flex flex-wrap gap-3">
+        <a routerLink="/live-sessions" class="btn-ira-primary">
+          <i class="bi bi-play-circle"></i> See session schedule
+        </a>
+        <a [href]="whatsapp.sessionBookingLink()" target="_blank" rel="noopener" class="btn-ira-whatsapp">
+          <i class="bi bi-whatsapp"></i> Book on WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="ira-live-teaser__card">
+      <i class="bi bi-camera-video-fill"></i>
+      <span class="batch-tag">LIVE &middot; VIA VIDEO CALL</span>
+      <p>Soaps &middot; Shampoo bars &middot; Face wash &middot; Concrete vases &amp; candles</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="container-ira">
+    <span class="eyebrow">How it's made</span>
+    <h2 class="mb-5">From oil to bar, in six stages</h2>
+    <div class="ira-process">
+      <div class="ira-process__step" *ngFor="let p of process; let i = index">
+        <span class="ira-process__num">{{ i + 1 }}</span>
+        <h3>{{ p.step }}</h3>
+        <p>{{ p.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-wire-cut bg="var(--ira-cream)" fg="var(--ira-forest)"></app-wire-cut>
+
+<!-- TESTIMONIALS -->
+<section class="section-alt">
+  <div class="container-ira">
+    <span class="eyebrow">From our customers</span>
+    <h2 class="mb-5">Cured, cut, and trusted</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-4" *ngFor="let t of testimonials">
+        <blockquote class="ira-quote">
+          <i class="bi bi-quote"></i>
+          <p>{{ t.quote }}</p>
+          <footer>{{ t.name }} <span>&middot; {{ t.role }}</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="ira-cta-band">
+  <div class="container-ira text-center">
+    <h2>Ready to swap your shelf for something handmade?</h2>
+    <p>Message us on WhatsApp — we'll help you pick your first bars, or find you a live session slot.</p>
+    <a class="btn-ira-whatsapp ira-cta-band__btn" [href]="whatsapp.generalLink()" target="_blank" rel="noopener">
+      <i class="bi bi-whatsapp"></i> Message +91 95019 58591
+    </a>
+  </div>
+</section>

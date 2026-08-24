@@ -1,0 +1,27 @@
+<nav class="ira-nav">
+  <div class="container-ira ira-nav__row">
+    <a class="ira-nav__brand" routerLink="/" (click)="close()">
+      <span class="ira-nav__mark">Ira</span>
+      <span class="ira-nav__word">
+        Ira Soaps
+        <small>handmade &amp; chemical-free</small>
+      </span>
+    </a>
+
+    <button class="ira-nav__toggle" type="button" (click)="toggle()" aria-label="Toggle navigation">
+      <i class="bi" [class.bi-list]="collapsed" [class.bi-x-lg]="!collapsed"></i>
+    </button>
+
+    <div class="ira-nav__links" [class.is-open]="!collapsed">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="close()">About Us</a>
+      <a routerLink="/products" routerLinkActive="active" (click)="close()">Shop</a>
+      <a routerLink="/live-sessions" routerLinkActive="active" (click)="close()">Live Sessions</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="close()">Our Story</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="close()">Contact</a>
+      <a class="btn-ira-whatsapp ira-nav__cta" [href]="whatsapp.generalLink()" target="_blank" rel="noopener" (click)="close()">
+        <i class="bi bi-whatsapp"></i> Chat with us
+      </a>
+    </div>
+  </div>
+</nav>

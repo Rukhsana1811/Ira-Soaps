@@ -1,0 +1,89 @@
+<section class="ira-ls-hero section-alt">
+  <div class="container-ira ira-ls-hero__grid">
+    <div>
+      <span class="eyebrow">Watch it made, live</span>
+      <h1>Live making sessions</h1>
+      <p>
+        Every product we sell can be watched being made — over video call, in real time.
+        Pick a product below, message us a slot, and we'll walk you through the mix, the pour
+        and the cut, live from our workshop.
+      </p>
+      <a class="btn-ira-whatsapp" [href]="whatsapp.sessionBookingLink()" target="_blank" rel="noopener">
+        <i class="bi bi-whatsapp"></i> Ask us for the next open slot
+      </a>
+    </div>
+    <div class="ira-ls-hero__stat">
+      <strong>45–60</strong>
+      <span>minutes per session, over video call</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container-ira">
+    <span class="eyebrow">How a session works</span>
+    <h2 class="mb-5">Four steps, start to shelf</h2>
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let step of howItWorks; let i = index">
+        <div class="ira-ls-step">
+          <span class="ira-ls-step__num">{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVAILABLE SESSIONS -->
+<section class="ira-ls-catalog">
+  <div class="container-ira">
+    <span class="eyebrow">Available for live sessions</span>
+    <h2 class="mb-4">Choose what you'd like to watch made</h2>
+
+    <div class="ira-ls-list">
+      <div class="ira-ls-item" *ngFor="let product of sessionProducts">
+        <app-product-icon [icon]="product.icon"></app-product-icon>
+        <div class="ira-ls-item__body">
+          <span class="batch-tag">{{ product.category === 'concrete-art' ? 'Concrete pour' : 'Soap-making' }}</span>
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.tagline }}</p>
+        </div>
+        <a
+          class="btn-ira-outline"
+          [href]="whatsapp.sessionBookingLink(product.name)"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="bi bi-camera-video"></i> Book this session
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container-ira">
+    <span class="eyebrow">Good to know</span>
+    <h2 class="mb-4">Session FAQs</h2>
+    <div class="accordion" id="sessionFaq">
+      <div class="accordion-item ira-faq-item" *ngFor="let f of faqs; let i = index">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            [attr.data-bs-target]="'#faq' + i"
+          >
+            {{ f.q }}
+          </button>
+        </h2>
+        <div [id]="'faq' + i" class="accordion-collapse collapse" data-bs-parent="#sessionFaq">
+          <div class="accordion-body">{{ f.a }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

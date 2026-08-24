@@ -1,0 +1,53 @@
+.ira-wa-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #2f6b4f;
+  color: #fff;
+  padding: 0.85rem;
+  border-radius: 999px;
+  box-shadow: 0 14px 30px -10px rgba(24, 41, 32, 0.55);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.25s ease, padding 0.25s ease, background 0.25s ease;
+  animation: ira-wa-pulse 2.6s ease-in-out infinite;
+}
+
+.ira-wa-float i { font-size: 1.5rem; line-height: 1; }
+
+.ira-wa-float__label {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 0.3s ease, opacity 0.2s ease;
+}
+
+.ira-wa-float:hover {
+  background: #24543e;
+  color: #fff;
+  transform: translateY(-3px);
+}
+.ira-wa-float:hover .ira-wa-float__label {
+  max-width: 160px;
+  opacity: 1;
+  margin-right: 0.15rem;
+}
+
+@keyframes ira-wa-pulse {
+  0%, 100% { box-shadow: 0 14px 30px -10px rgba(24, 41, 32, 0.55), 0 0 0 0 rgba(47, 107, 79, 0.45); }
+  50% { box-shadow: 0 14px 30px -10px rgba(24, 41, 32, 0.55), 0 0 0 10px rgba(47, 107, 79, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ira-wa-float { animation: none; }
+}
+
+@media (max-width: 575.98px) {
+  .ira-wa-float { right: 1rem; bottom: 1rem; padding: 0.8rem; }
+}

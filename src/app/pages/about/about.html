@@ -1,0 +1,72 @@
+<section class="ira-about-hero">
+  <div class="container-ira ira-about-hero__grid">
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h1>A workshop, not a factory</h1>
+      <p>
+        Ira Soaps started at a kitchen counter with one pot of oat-and-honey soap batter and
+        a wire cutter. What we make has grown since then, but not how we make it — every
+        bar, wash and concrete piece we sell is still mixed and finished by hand, in batches
+        small enough that we know each one.
+      </p>
+    </div>
+    <div class="ira-about-hero__stamp">
+      <span class="batch-tag">EST. IN A HOME KITCHEN</span>
+      <p>Now a small workshop, still small-batch.</p>
+    </div>
+  </div>
+</section>
+
+<app-wire-cut bg="var(--ira-cream)" fg="var(--ira-forest)"></app-wire-cut>
+
+<section class="section-alt">
+  <div class="container-ira ira-about-story">
+    <div>
+      <span class="eyebrow">Why chemical-free</span>
+      <h2>We started with our own skin</h2>
+      <p>
+        The first bars were made to solve a personal problem — reactive, easily irritated
+        skin that didn't get along with sulphates or synthetic fragrance. Cold-process
+        soap-making and natural surfactant blends were the fix, and they still are: no
+        parabens, no sulphates, no artificial fragrance, in anything we sell.
+      </p>
+    </div>
+    <div>
+      <span class="eyebrow">Why concrete art</span>
+      <h2>The same hands-on instinct</h2>
+      <p>
+        Concrete art grew out of the same instinct as the soap — working with a raw material
+        directly, seeing it change state, and finishing every piece by hand. Our vases, jars
+        and candle vessels are poured the same way we pour soap: measured, mixed, poured,
+        and cured before they ever reach a shelf.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-ira">
+    <span class="eyebrow">What we hold to</span>
+    <h2 class="mb-5">Our values</h2>
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let v of values">
+        <div class="ira-value">
+          <i class="bi" [ngClass]="v.icon"></i>
+          <h3>{{ v.title }}</h3>
+          <p>{{ v.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ira-about-cta">
+  <div class="container-ira text-center">
+    <h2>Curious how a batch is actually made?</h2>
+    <p>Join a live session and watch it happen, or come find us in Instagram.</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a routerLink="/live-sessions" class="btn-ira-primary"><i class="bi bi-camera-video"></i> Live sessions</a>
+      <a routerLink="/contact" class="btn-ira-outline"><i class="bi bi-geo-alt"></i> Visit or contact us</a>
+    </div>
+  </div>
+</section>
