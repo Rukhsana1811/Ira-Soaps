@@ -43,16 +43,16 @@
     <h2 class="mb-4">Choose what you'd like to watch made</h2>
 
     <div class="ira-ls-list">
-      <div class="ira-ls-item" *ngFor="let product of sessionProducts">
-        <app-product-icon [icon]="product.icon"></app-product-icon>
+      <div class="ira-ls-item" *ngFor="let session of sessions; let i = index">
+        <span class="ira-ls-item__number">0{{ i + 1 }}</span>
         <div class="ira-ls-item__body">
-          <span class="batch-tag">{{ product.category === 'concrete-art' ? 'Concrete pour' : 'Soap-making' }}</span>
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.tagline }}</p>
+          <span class="batch-tag">Live workshop</span>
+          <h3>{{ session.name }}</h3>
+          <p>{{ session.tagline }}</p>
         </div>
         <a
           class="btn-ira-outline"
-          [href]="whatsapp.sessionBookingLink(product.name)"
+          [href]="whatsapp.sessionBookingLink(session.name)"
           target="_blank"
           rel="noopener"
         >

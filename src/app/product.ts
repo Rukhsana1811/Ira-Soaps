@@ -3,13 +3,13 @@
 // @Service()
 // export class Product {}
 import { Injectable } from '@angular/core';
-import { CategoryMeta, Products } from './products';
+import { CategoryMeta, Products, Sessions } from './products';
 
 @Injectable({ providedIn: 'root' })
 export class Product {
   readonly categories: CategoryMeta[] = [
     { id: 'all', label: 'All products', blurb: 'Every batch we cure, poured and packed by hand.' },
-    { id: 'soaps', label: 'Soaps', blurb: 'Cold-process bars, cured 4–6 weeks.' },
+    { id: 'soaps', label: 'Soaps', blurb: 'melt & pour bars' },
     { id: 'shampoo', label: 'Shampoo', blurb: 'Sulphate-free, low-waste hair care.' },
     { id: 'face-wash', label: 'Face wash', blurb: 'Gentle, skin-first daily cleansers.' },
     { id: 'shower-gel', label: 'Shower gel & body wash', blurb: 'Plant-based, lathers soft.' },
@@ -23,7 +23,7 @@ export class Product {
       category: 'soaps',
       tagline: 'Our founding recipe',
       description:
-        'A slow cold-process bar built on oat milk and raw honey, cured for six weeks for a hard, long-lasting finish. No parabens, no sulphates, no synthetic fragrance.',
+        'A slow melt & pour bar built on oat milk and raw honey, cured for six weeks for a hard, long-lasting finish. No parabens, no sulphates, no synthetic fragrance.',
       price: 249,
       size: '100 g bar',
       ingredients: ['Oat milk', 'Raw honey', 'Cold-pressed coconut oil', 'Shea butter'],
@@ -62,7 +62,7 @@ export class Product {
       category: 'shampoo',
       tagline: 'One bar, ~80 washes',
       description:
-        'A traditional reetha and shikakai base, cold-processed into a bar form — no plastic bottle, no sulphates, gentle enough for colour-treated hair.',
+        'A traditional reetha and shikakai base, melt & poured into a bar form — no plastic bottle, no sulphates, gentle enough for colour-treated hair.',
       price: 299,
       size: '90 g bar',
       ingredients: ['Reetha (soapnut)', 'Shikakai', 'Amla', 'Coconut oil'],
@@ -82,7 +82,7 @@ export class Product {
       icon: 'bottle',
       hasLiveSession: false
     },
-     {
+    {
       id: 'blue-pea-hibiscus-shampoo',
       name: 'Blue Pea & Hibiscus',
       category: 'shampoo',
@@ -198,6 +198,29 @@ export class Product {
       ingredients: ['Soy wax', 'Cotton wick', 'Concrete vessel', 'Essential oil blend'],
       icon: 'candle',
       hasLiveSession: true
+    }
+  ];
+
+  readonly sessions: Sessions[] = [
+    {
+      id: 'soap',
+      name: 'Chemical-Free Artisanal Soaps',
+      tagline: 'Master melt & pour soapmaking using pure oils and natural botanicals.'
+    },
+    {
+      id: 'shampoo',
+      name: 'Herbal & Sulfate-Free Hair Cleansers',
+      tagline: 'Formulate nourishing shampoo bars for healthy, chemical-free hair care.'
+    },
+    {
+      id: 'face-wash',
+      name: 'Handcrafted Botanical Face Washes',
+      tagline: 'Create gentle, skin-soothing cleansers tailored for sensitive skin types.'
+    },
+    {
+      id: 'shower-gel',
+      name: 'Natural Body Washes & Shower Gels',
+      tagline: 'Craft refreshing, plant-based body cleansers rich in essential oils.'
     }
   ];
 

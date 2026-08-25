@@ -78,3 +78,9 @@ a.ira-contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow
   margin-top: 0.75rem;
   text-align: center;
 }
+.eyebrow {
+  color: var(--ira-honey);
+}
+.eyebrow:before {
+  background: var(--ira-honey);
+}

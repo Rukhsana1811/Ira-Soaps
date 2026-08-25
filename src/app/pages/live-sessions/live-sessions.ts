@@ -11,17 +11,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../product';
 import { WhatsappHelper } from '../../whatsapp-helper';
-import { ProductIcon } from '../../shared/product-icon/product-icon';
+import { Sessions } from '../../products';
 
 @Component({
   selector: 'app-live-sessions',
   standalone: true,
-  imports: [CommonModule, ProductIcon],
+  imports: [CommonModule],
   templateUrl: './live-sessions.html',
   styleUrl: './live-sessions.scss'
 })
 export class LiveSessions {
-  sessionProducts;
+  sessions: Sessions[];
 
   howItWorks = [
     { title: 'Pick a product', text: 'Choose any product marked "Live session available" — soap, shampoo, face wash or a concrete piece.' },
@@ -38,6 +38,6 @@ export class LiveSessions {
   ];
 
   constructor(private productService: Product, public whatsapp: WhatsappHelper) {
-    this.sessionProducts = this.productService.liveSessionProducts();
+    this.sessions = this.productService.sessions;
   }
 }

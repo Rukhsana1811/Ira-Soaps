@@ -38,3 +38,10 @@
 
   i { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
 }
+
+.eyebrow {
+  color: var(--ira-honey);
+}
+.eyebrow:before {
+  background: var(--ira-honey);
+}

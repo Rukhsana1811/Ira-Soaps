@@ -12,23 +12,21 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../product';
 import { WhatsappHelper } from '../../whatsapp-helper';
-import { ProductCard } from '../../shared/product-card/product-card';
-import { WireCut} from '../../pages/wire-cut/wire-cut';
-import { CategoryMeta } from '../../products';
+import { WireCut } from '../../pages/wire-cut/wire-cut';
+import { CategoryMeta, Sessions } from '../../products';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule,
     RouterLink,
-     ProductCard,
-     WireCut],
+    WireCut],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class Home {
   categories: CategoryMeta[];
-  featured;
+  sessions: Sessions[];
   process = [
     { step: 'Source', text: 'Botanical oils, herbs and fine-cure concrete sourced from small Indian suppliers we know by name.' },
     { step: 'Infuse / Mix', text: 'Oils are cold-infused for weeks; concrete is measured and mixed in small hand-poured batches.' },
@@ -48,8 +46,6 @@ export class Home {
     public whatsapp: WhatsappHelper
   ) {
     this.categories = this.productService.categories.filter((c) => c.id !== 'all');
-    this.featured = this.productService.products.filter((p) =>
-      ['oat-honey-bar', 'reetha-shikakai-shampoo', 'rosewater-facewash', 'concrete-diy-vase-kit'].includes(p.id)
-    );
+    this.sessions = this.productService.sessions;
   }
 }

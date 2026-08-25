@@ -56,6 +56,11 @@
   flex-wrap: wrap;
 }
 
+.ira-ls-item__number {
+  min-width: 2rem;
+  font-size: 0.9rem;
+}
+
 .ira-ls-item__body {
   flex: 1;
   min-width: 220px;

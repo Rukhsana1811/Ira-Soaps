@@ -2,7 +2,7 @@
 <section class="ira-hero">
   <div class="container-ira ira-hero__grid">
     <div class="ira-hero__copy">
-      <span class="eyebrow">Small-batch &middot; Online workshop</span>
+      <span class="eyebrow1">Small-batch &middot; Online workshop</span>
       <h1>
         Soap poured slowly,<br />
         <em>cut by hand,</em><br />
@@ -54,26 +54,36 @@
           <span class="ira-cat-card__go">Browse <i class="bi bi-arrow-up-right"></i></span>
         </a>
       </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <img src="assets/orange-soap.jpeg" class="img-fluid rounded-5" alt="">
+      </div>
     </div>
   </div>
 </section>
 
 <app-wire-cut bg="var(--ira-forest)" fg="var(--ira-cream)"></app-wire-cut>
 
-<!-- FEATURED PRODUCTS -->
-<section>
+<!-- LIVE SESSIONS -->
+<section class="ira-home-sessions">
   <div class="container-ira">
     <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
       <div>
-        <span class="eyebrow">Currently curing</span>
-        <h2>Customer favourites</h2>
+        <span class="eyebrow">Learn with us</span>
+        <h2>Live making sessions</h2>
       </div>
-      <a routerLink="/products" class="btn-ira-outline">See all products <i class="bi bi-arrow-right"></i></a>
+      <a routerLink="/live-sessions" class="btn-ira-outline">See all sessions <i class="bi bi-arrow-right"></i></a>
     </div>
 
     <div class="row g-4">
-      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let product of featured">
-        <app-product-card [product]="product"></app-product-card>
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let session of sessions; let i = index">
+        <article class="ira-home-session">
+          <span class="ira-home-session__number">0{{ i + 1 }}</span>
+          <h3>{{ session.name }}</h3>
+          <p>{{ session.tagline }}</p>
+          <a class="btn-ira-whatsapp" [href]="whatsapp.sessionBookingLink(session.name)" target="_blank" rel="noopener">
+            <i class="bi bi-camera-video"></i> Book session
+          </a>
+        </article>
       </div>
     </div>
   </div>
@@ -83,7 +93,7 @@
 <section class="ira-live-teaser">
   <div class="container-ira ira-live-teaser__grid">
     <div>
-      <span class="eyebrow">Watch it made</span>
+      <span class="eyebrow1">Watch it made</span>
       <h2>Book a live making session</h2>
       <p>
         Every product on our shelf started as a live demonstration in our workshop. Join a
@@ -101,17 +111,27 @@
       </div>
     </div>
     <div class="ira-live-teaser__card">
-      <i class="bi bi-camera-video-fill"></i>
-      <span class="batch-tag">LIVE &middot; VIA VIDEO CALL</span>
-      <p>Soaps &middot; Shampoo &middot; Face wash &middot; Concrete vases &amp; candles</p>
+      <video
+        class="ira-live-teaser__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="Ira Soaps products being made"
+      >
+        <source src="assets/products.mp4" type="video/mp4" />
+        Your browser does not support embedded videos.
+      </video>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section>
-  <div class="container-ira">
-    <span class="eyebrow">How it's made</span>
+<section class="ira-process-section">
+  <div class="process" aria-hidden="true"></div>
+  <div class="container-ira ira-process-section__content">
+    <span class="eyebrow1">How it's made</span>
     <h2 class="mb-5">From oil to bar, in six stages</h2>
     <div class="ira-process">
       <div class="ira-process__step" *ngFor="let p of process; let i = index">

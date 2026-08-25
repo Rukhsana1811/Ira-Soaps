@@ -18,11 +18,7 @@ export const routes: Routes = [{
     ),
   title: 'Live Making Sessions — Ira Soaps'
 },
-{
-  path: 'our-story',
-  loadComponent: () => import('./pages/our-story/our-story').then((m) => m.OurStory),
-  title: 'Our Story — Ira Soaps'
-},
+
 {
   path: 'about',
   loadComponent: () => import('./pages/about/about').then((m) => m.About),

@@ -60,7 +60,7 @@ h4,
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ira-forest);
+  color: white;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -70,7 +70,7 @@ h4,
   content: '';
   width: 22px;
   height: 1px;
-  background: var(--ira-honey);
+  background: white;
   display: inline-block;
 }
 
@@ -187,7 +187,7 @@ section {
 }
 
 .section-alt .eyebrow {
-  color: var(--ira-honey);
+  color: white;
 }
 
 .section-alt .eyebrow::before {
@@ -235,5 +235,13 @@ button:focus-visible,
   * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+.ira-value, .ira-ls-item, .ira-home-session {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(81, 57, 91, 0.15);
   }
 }

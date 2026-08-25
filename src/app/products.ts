@@ -6,7 +6,7 @@ export type ProductCategory =
   | 'concrete-art';
  
 export interface Products {
-     id: string;
+  id: string;
   name: string;
   category: ProductCategory;
   tagline: string;
@@ -23,4 +23,10 @@ export interface CategoryMeta {
   id: ProductCategory | 'all';
   label: string;
   blurb: string;
+}
+
+export interface Sessions {
+  id: string;
+  name: string;
+  tagline: string;
 }
