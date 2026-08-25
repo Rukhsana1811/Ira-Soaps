@@ -1,4 +1,3 @@
-<p>products works!</p>
 <section class="ira-shop-header">
   <div class="container-ira">
     <span class="eyebrow">The full shelf</span>
@@ -24,7 +23,7 @@
 
     <div class="row g-4" *ngIf="visible.length; else empty">
       <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of visible">
-        <!-- <app-product-card [product]="product"></app-product-card> -->
+        <app-product-card [product]="product"></app-product-card>
       </div>
     </div>
 

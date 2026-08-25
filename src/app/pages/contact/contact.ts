@@ -24,7 +24,7 @@ export class Contact {
   interest = 'Soaps';
   message = '';
 
-  interests = ['Soaps', 'Shampoo bars', 'Face wash', 'Shower gel / body wash', 'Concrete art', 'Live session'];
+  interests = ['Soaps', 'Shampoo', 'Face wash', 'Shower gel / body wash', 'Concrete art', 'Live session'];
 
   constructor(public whatsapp: WhatsappHelper) {}
 

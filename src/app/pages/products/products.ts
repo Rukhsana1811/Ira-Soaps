@@ -12,11 +12,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../product';
 import { CategoryMeta, Products } from '../../products';
+import { ProductCard } from '../../shared/product-card/product-card';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductCard],
   templateUrl: './products.html',
   styleUrl: './products.scss'
 })

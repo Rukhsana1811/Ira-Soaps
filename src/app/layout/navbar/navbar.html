@@ -1,7 +1,7 @@
 <nav class="ira-nav">
   <div class="container-ira ira-nav__row">
     <a class="ira-nav__brand" routerLink="/" (click)="close()">
-      <span class="ira-nav__mark">Ira</span>
+       <img src="assets/logo.jpeg" alt="" class="logo">
       <span class="ira-nav__word">
         Ira Soaps
         <small>handmade &amp; chemical-free</small>
@@ -17,9 +17,9 @@
       <a routerLink="/about" routerLinkActive="active" (click)="close()">About Us</a>
       <a routerLink="/products" routerLinkActive="active" (click)="close()">Shop</a>
       <a routerLink="/live-sessions" routerLinkActive="active" (click)="close()">Live Sessions</a>
-      <a routerLink="/about" routerLinkActive="active" (click)="close()">Our Story</a>
+      <a routerLink="/our-story" routerLinkActive="active" (click)="close()">Our Story</a>
       <a routerLink="/contact" routerLinkActive="active" (click)="close()">Contact</a>
-      <a class="btn-ira-whatsapp ira-nav__cta" [href]="whatsapp.generalLink()" target="_blank" rel="noopener" (click)="close()">
+      <a class="text-light p-2 btn-ira-whatsapp ira-nav__cta" [href]="whatsapp.generalLink()" target="_blank" rel="noopener" (click)="close()">
         <i class="bi bi-whatsapp"></i> Chat with us
       </a>
     </div>

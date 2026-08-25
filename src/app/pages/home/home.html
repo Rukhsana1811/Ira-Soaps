@@ -9,7 +9,7 @@
         never rushed.
       </h1>
       <p class="ira-hero__lead">
-        Ira Soaps makes chemical-free soaps, shampoo bars, face wash and body wash — plus
+        Ira Soaps makes chemical-free soaps, shampoo, face wash and body wash — plus
         hand-poured concrete art. Every piece is mixed, cured and finished by hand, in
         batches small enough to know each one by its cut.
       </p>
@@ -30,10 +30,11 @@
     </div>
 
     <div class="ira-hero__visual" aria-hidden="true">
-      <div class="ira-hero__loaf">
+      <img src="assets/hero.png" class="img-fluid rounded-5" alt="">
+      <!-- <div class="ira-hero__loaf">
         <div class="ira-hero__bar" *ngFor="let i of [1,2,3,4,5]" [style.--i]="i"></div>
       </div>
-      <span class="batch-tag ira-hero__stamp">BATCH №24 &middot; CURING SINCE AUG 2026</span>
+      <span class="batch-tag ira-hero__stamp">BATCH №24 &middot; CURING SINCE AUG 2026</span> -->
     </div>
   </div>
 </section>
@@ -72,7 +73,7 @@
 
     <div class="row g-4">
       <div class="col-12 col-sm-6 col-lg-3" *ngFor="let product of featured">
-        <!-- <app-product-card [product]="product"></app-product-card> -->
+        <app-product-card [product]="product"></app-product-card>
       </div>
     </div>
   </div>
@@ -86,7 +87,7 @@
       <h2>Book a live making session</h2>
       <p>
         Every product on our shelf started as a live demonstration in our workshop. Join a
-        session over video call and watch your soap, shampoo bar or concrete vase get mixed
+        session over video call and watch your soap, shampoo or concrete vase get mixed
         and poured in real time — ask questions, request a custom batch, or just watch the
         process from oil to bar.
       </p>
@@ -102,7 +103,7 @@
     <div class="ira-live-teaser__card">
       <i class="bi bi-camera-video-fill"></i>
       <span class="batch-tag">LIVE &middot; VIA VIDEO CALL</span>
-      <p>Soaps &middot; Shampoo bars &middot; Face wash &middot; Concrete vases &amp; candles</p>
+      <p>Soaps &middot; Shampoo &middot; Face wash &middot; Concrete vases &amp; candles</p>
     </div>
   </div>
 </section>

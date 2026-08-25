@@ -40,7 +40,7 @@ export class Home {
   testimonials = [
     { name: 'Meera K.', role: 'Repeat customer, Mohali', quote: 'My skin stopped breaking out within two weeks of switching to the neem bar. It genuinely smells like a herb garden, not a factory.' },
     { name: 'Arjun S.', role: 'Live session guest', quote: 'Joined the concrete vase session with my sister — we left with two vases and a real understanding of how they are made.' },
-    { name: 'Priya D.', role: 'Shampoo bar convert', quote: 'One bar replaced three plastic bottles in my bathroom. My hair has never felt this light.' }
+    { name: 'Priya D.', role: 'Shampoo convert', quote: 'One bar replaced three plastic bottles in my bathroom. My hair has never felt this light.' }
   ];
 
   constructor(

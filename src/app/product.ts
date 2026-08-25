@@ -10,7 +10,7 @@ export class Product {
   readonly categories: CategoryMeta[] = [
     { id: 'all', label: 'All products', blurb: 'Every batch we cure, poured and packed by hand.' },
     { id: 'soaps', label: 'Soaps', blurb: 'Cold-process bars, cured 4–6 weeks.' },
-    { id: 'shampoo', label: 'Shampoo bars', blurb: 'Sulphate-free, low-waste hair care.' },
+    { id: 'shampoo', label: 'Shampoo', blurb: 'Sulphate-free, low-waste hair care.' },
     { id: 'face-wash', label: 'Face wash', blurb: 'Gentle, skin-first daily cleansers.' },
     { id: 'shower-gel', label: 'Shower gel & body wash', blurb: 'Plant-based, lathers soft.' },
     { id: 'concrete-art', label: 'Concrete art', blurb: 'Hand-poured vases, jars, candles & DIY kits.' }
@@ -58,7 +58,7 @@ export class Product {
     },
     {
       id: 'reetha-shikakai-shampoo',
-      name: 'Reetha–Shikakai Shampoo Bar',
+      name: 'Reetha–Shikakai',
       category: 'shampoo',
       tagline: 'One bar, ~80 washes',
       description:
@@ -71,14 +71,27 @@ export class Product {
     },
     {
       id: 'onion-hibiscus-shampoo',
-      name: 'Onion & Hibiscus Shampoo Bar',
+      name: 'Onion & Hibiscus',
       category: 'shampoo',
       tagline: 'For strengthening & shine',
       description:
         'Onion extract and hibiscus, known for supporting hair strength, worked into a rich lathering bar with no synthetic silicones.',
-      price: 319,
-      size: '90 g bar',
+      price: 370,
+      size: '250 ml',
       ingredients: ['Onion extract', 'Hibiscus', 'Fenugreek', 'Coconut oil'],
+      icon: 'bottle',
+      hasLiveSession: false
+    },
+     {
+      id: 'blue-pea-hibiscus-shampoo',
+      name: 'Blue Pea & Hibiscus',
+      category: 'shampoo',
+      tagline: 'For strengthening & shine',
+      description:
+        'Blue pea extract and hibiscus, known for supporting hair strength, worked into a rich lathering bar with no synthetic silicones.',
+      price: 390,
+      size: '250 ml',
+      ingredients: ['Blue Pea', 'Hibiscus', 'Fenugreek', 'Lavendar Hydrosol'],
       icon: 'bar',
       hasLiveSession: false
     },

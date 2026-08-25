@@ -82,12 +82,14 @@
   a:not(.ira-nav__cta)::after {
     content: '';
     position: absolute;
-    left: 0; right: 100%;
+    left: 0;
+    right: 100%;
     bottom: -2px;
     height: 2px;
     background: var(--ira-honey);
     transition: right 0.25s ease;
   }
+
   a.active:not(.ira-nav__cta)::after,
   a:not(.ira-nav__cta):hover::after {
     right: 0;
@@ -100,7 +102,9 @@
 }
 
 @media (max-width: 991.98px) {
-  .ira-nav__toggle { display: inline-flex; }
+  .ira-nav__toggle {
+    display: inline-flex;
+  }
 
   .ira-nav__links {
     position: absolute;
@@ -116,11 +120,23 @@
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
-  .ira-nav__links.is-open { max-height: 420px; }
+
+  .ira-nav__links.is-open {
+    max-height: 420px;
+  }
+
   .ira-nav__links a {
     width: 100%;
     padding: 0.9rem 1.25rem;
     border-top: 1px solid var(--ira-line);
   }
-  .ira-nav__cta { margin: 0.75rem 1.25rem 1.1rem; }
+
+  .ira-nav__cta {
+    margin: 0.75rem 1.25rem 1.1rem;
+  }
+}
+
+.logo {
+  width: 80px;
+  border-radius: 100%;
 }

@@ -15,7 +15,7 @@ import { ProductIcon } from '../product-icon/product-icon';
 import { Products } from '../../products';
 
 @Component({
-  selector: 'ira-product-card',
+  selector: 'app-product-card',
   standalone: true,
   imports: [CommonModule, ProductIcon],
   templateUrl: './product-card.html',
