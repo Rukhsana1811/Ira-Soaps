@@ -7,7 +7,7 @@
 //   templateUrl: './home.html',
 // })
 // export class Home {}
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Product } from '../../product';
@@ -25,6 +25,7 @@ import { CategoryMeta, Sessions } from '../../products';
   styleUrl: './home.scss'
 })
 export class Home {
+ @ViewChild('videoPlayer') videoElement!: ElementRef<HTMLVideoElement>;
   categories: CategoryMeta[];
   sessions: Sessions[];
   process = [
@@ -48,4 +49,15 @@ export class Home {
     this.categories = this.productService.categories.filter((c) => c.id !== 'all');
     this.sessions = this.productService.sessions;
   }
+
+  ngAfterViewInit(): void {
+    if (this.videoElement?.nativeElement) {
+      const video = this.videoElement.nativeElement;
+      video.muted = true;
+      video.play().catch(error => {
+        console.warn('Autoplay prevented:', error);
+      });
+    }
+  }
+
 }

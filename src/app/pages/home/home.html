@@ -113,11 +113,12 @@
     <div class="ira-live-teaser__card">
       <video
   class="ira-live-teaser__video"
-  [autoplay]="true"
-  [muted]="true"
-  [loop]="true"
-  [playsinline]="true"
-  preload="auto"
+  autoplay
+  muted
+  loop
+  playsinline
+  [attr.playsinline]="true"
+  preload="metadata"
   aria-label="Ira Soaps products being made"
 >
   <source src="assets/products.mp4" type="video/mp4" />
