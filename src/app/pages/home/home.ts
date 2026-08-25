@@ -28,6 +28,29 @@ export class Home {
  @ViewChild('videoPlayer') videoElement!: ElementRef<HTMLVideoElement>;
   categories: CategoryMeta[];
   sessions: Sessions[];
+  whatWeDo = [
+    {
+      title: 'Handmade products',
+      icon: 'bi-droplet-half',
+      items: ['Soaps', 'Shampoo', 'Face wash', 'Body wash & shower gel', 'Concrete art', 'Candles'],
+      link: '/products',
+      action: 'Shop products'
+    },
+    {
+      title: 'Live sessions worldwide',
+      icon: 'bi-globe2',
+      items: ['Soapmaking', 'Shampoo formulation', 'Face wash making', 'Body wash & shower gel making'],
+      link: '/live-sessions',
+      action: 'Explore sessions'
+    },
+    {
+      title: 'Raw materials & supplies',
+      icon: 'bi-box-seam',
+      items: ['Moulds & bottles', 'Soap base & shampoo base', 'Face wash & shower gel base', 'Packaging materials'],
+      link: '',
+      action: 'Enquire on WhatsApp'
+    }
+  ];
   process = [
     { step: 'Source', text: 'Botanical oils, herbs and fine-cure concrete sourced from small Indian suppliers we know by name.' },
     { step: 'Infuse / Mix', text: 'Oils are cold-infused for weeks; concrete is measured and mixed in small hand-poured batches.' },

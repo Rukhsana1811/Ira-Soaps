@@ -61,6 +61,46 @@
   </div>
 </section>
 
+<!-- WHAT WE DO -->
+<section class="ira-what-we-do">
+  <div class="container-ira">
+    <div class="ira-what-we-do__intro">
+      <div>
+        <span class="eyebrow1">What we do</span>
+        <h2>Made for makers, bathers and curious minds</h2>
+      </div>
+      <p>
+        From finished handmade goods to the materials behind them, Ira Soaps brings small-batch
+        craft to customers and makers around the world.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-4" *ngFor="let offering of whatWeDo">
+        <article class="ira-what-we-do__card">
+          <i class="ira-what-we-do__icon bi" [class]="offering.icon" aria-hidden="true"></i>
+          <h3>{{ offering.title }}</h3>
+          <ul>
+            <li *ngFor="let item of offering.items">{{ item }}</li>
+          </ul>
+          <a
+            *ngIf="offering.link; else enquiryLink"
+            class="btn-ira-outline"
+            [routerLink]="offering.link"
+          >
+            {{ offering.action }} <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <ng-template #enquiryLink>
+            <a class="btn-ira-whatsapp" [href]="whatsapp.generalLink()" target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp"></i> {{ offering.action }}
+            </a>
+          </ng-template>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <app-wire-cut bg="var(--ira-forest)" fg="var(--ira-cream)"></app-wire-cut>
 
 <!-- LIVE SESSIONS -->

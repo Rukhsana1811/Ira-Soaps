@@ -210,7 +210,7 @@ export class Product {
     {
       id: 'shampoo',
       name: 'Herbal & Sulfate-Free Hair Cleansers',
-      tagline: 'Formulate nourishing shampoo bars for healthy, chemical-free hair care.'
+      tagline: 'Formulate nourishing shampoo for healthy, chemical-free hair care.'
     },
     {
       id: 'face-wash',
