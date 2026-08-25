@@ -68,7 +68,7 @@
   <div class="container-ira">
     <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
       <div>
-        <span class="eyebrow">Learn with us</span>
+        <span class="eyebrow1">Learn with us</span>
         <h2>Live making sessions</h2>
       </div>
       <a routerLink="/live-sessions" class="btn-ira-outline">See all sessions <i class="bi bi-arrow-right"></i></a>
@@ -112,17 +112,17 @@
     </div>
     <div class="ira-live-teaser__card">
       <video
-        class="ira-live-teaser__video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-label="Ira Soaps products being made"
-      >
-        <source src="assets/products.mp4" type="video/mp4" />
-        Your browser does not support embedded videos.
-      </video>
+  class="ira-live-teaser__video"
+  [autoplay]="true"
+  [muted]="true"
+  [loop]="true"
+  [playsinline]="true"
+  preload="auto"
+  aria-label="Ira Soaps products being made"
+>
+  <source src="assets/products.mp4" type="video/mp4" />
+  Your browser does not support embedded videos.
+</video>
     </div>
   </div>
 </section>
