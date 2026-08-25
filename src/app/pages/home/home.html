@@ -77,24 +77,26 @@
 
     <div class="row g-4">
       <div class="col-12 col-md-4" *ngFor="let offering of whatWeDo">
-        <article class="ira-what-we-do__card">
-          <i class="ira-what-we-do__icon bi" [class]="offering.icon" aria-hidden="true"></i>
-          <h3>{{ offering.title }}</h3>
-          <ul>
-            <li *ngFor="let item of offering.items">{{ item }}</li>
-          </ul>
-          <a
-            *ngIf="offering.link; else enquiryLink"
-            class="btn-ira-outline"
-            [routerLink]="offering.link"
-          >
-            {{ offering.action }} <i class="bi bi-arrow-up-right"></i>
-          </a>
-          <ng-template #enquiryLink>
-            <a class="btn-ira-whatsapp" [href]="whatsapp.generalLink()" target="_blank" rel="noopener">
-              <i class="bi bi-whatsapp"></i> {{ offering.action }}
+        <article class="ira-what-we-do__card" [style.--what-we-do-image]="'url(' + offering.image + ')'">
+          <div class="ira-what-we-do__content">
+            <i class="ira-what-we-do__icon bi" [class]="offering.icon" aria-hidden="true"></i>
+            <h3>{{ offering.title }}</h3>
+            <ul>
+              <li *ngFor="let item of offering.items">{{ item }}</li>
+            </ul>
+            <a
+              *ngIf="offering.link; else enquiryLink"
+              class="btn-ira-outline"
+              [routerLink]="offering.link"
+            >
+              {{ offering.action }} <i class="bi bi-arrow-up-right"></i>
             </a>
-          </ng-template>
+            <ng-template #enquiryLink>
+              <a class="btn-ira-whatsapp" [href]="whatsapp.generalLink()" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> {{ offering.action }}
+              </a>
+            </ng-template>
+          </div>
         </article>
       </div>
     </div>

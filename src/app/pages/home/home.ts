@@ -32,6 +32,7 @@ export class Home {
     {
       title: 'Handmade products',
       icon: 'bi-droplet-half',
+      image: 'assets/soaps.png',
       items: ['Soaps', 'Shampoo', 'Face wash', 'Body wash & shower gel', 'Concrete art', 'Candles'],
       link: '/products',
       action: 'Shop products'
@@ -39,6 +40,7 @@ export class Home {
     {
       title: 'Live sessions worldwide',
       icon: 'bi-globe2',
+      image: 'assets/live-session.png',
       items: ['Soapmaking', 'Shampoo formulation', 'Face wash making', 'Body wash & shower gel making'],
       link: '/live-sessions',
       action: 'Explore sessions'
@@ -46,6 +48,7 @@ export class Home {
     {
       title: 'Raw materials & supplies',
       icon: 'bi-box-seam',
+      image: 'assets/fav.jpeg',
       items: ['Moulds & bottles', 'Soap base & shampoo base', 'Face wash & shower gel base', 'Packaging materials'],
       link: '',
       action: 'Enquire on WhatsApp'

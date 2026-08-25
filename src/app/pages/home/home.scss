@@ -140,6 +140,8 @@
 }
 
 .ira-what-we-do__card {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -147,9 +149,29 @@
   background: var(--ira-card);
   border: 1px solid var(--ira-line);
   border-radius: var(--r-md);
+  overflow: hidden;
 
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image: var(--what-we-do-image);
+    background-position: center;
+    background-size: cover;
+    opacity: 0.16;
+  }
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: rgba(251, 248, 239, 0.78);
+    z-index: -1;
+  }
+
+  .ira-what-we-do__content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
   h3 { font-size: 1.35rem; margin: 0.85rem 0 1rem; }
-  ul { flex: 1; padding-left: 1.1rem; margin: 0 0 1.5rem; color: rgba(34, 39, 29, 0.72); }
+  ul { flex: 1; padding-left: 1.1rem; margin: 0 0 1.5rem; color: #000000; }
   li { margin-bottom: 0.45rem; }
   .btn-ira-outline, .btn-ira-whatsapp { align-self: flex-start; font-size: 0.82rem; padding: 0.65rem 1rem; }
 }
