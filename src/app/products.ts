@@ -29,4 +29,5 @@ export interface Sessions {
   id: string;
   name: string;
   tagline: string;
+  price: string;
 }

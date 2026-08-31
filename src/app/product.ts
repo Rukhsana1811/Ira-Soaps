@@ -205,22 +205,26 @@ export class Product {
     {
       id: 'soap',
       name: 'Chemical-Free Artisanal Soaps',
-      tagline: 'Master melt & pour soapmaking using pure oils and natural botanicals.'
+      tagline: 'Master melt & pour soapmaking using pure oils and natural botanicals.',
+      price: '999'
     },
     {
       id: 'shampoo',
       name: 'Herbal & Sulfate-Free Hair Cleansers',
-      tagline: 'Formulate nourishing shampoo for healthy, chemical-free hair care.'
+      tagline: 'Formulate nourishing shampoo for healthy, chemical-free hair care.',
+      price: '599'
     },
     {
       id: 'face-wash',
       name: 'Handcrafted Botanical Face Washes',
-      tagline: 'Create gentle, skin-soothing cleansers tailored for sensitive skin types.'
+      tagline: 'Create gentle, skin-soothing cleansers tailored for sensitive skin types.',
+      price: '599'
     },
     {
       id: 'shower-gel',
       name: 'Natural Body Washes & Shower Gels',
-      tagline: 'Craft refreshing, plant-based body cleansers rich in essential oils.'
+      tagline: 'Craft refreshing, plant-based body cleansers rich in essential oils.',
+      price: '599'
     }
   ];
 
