@@ -123,6 +123,61 @@
   margin-top: 1rem;
 }
 
+// -- DIY KITS ------------------------------------------------------
+.ira-kits-section {
+  background: var(--ira-card);
+}
+
+.ira-kits-section__intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+
+  h2 { max-width: 620px; margin-top: 0.75rem; }
+  > p { max-width: 390px; color: rgba(34, 39, 29, 0.72); margin: 0; }
+}
+
+.ira-kit-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  background: var(--ira-cream);
+  border: 1px solid var(--ira-line);
+  border-radius: var(--r-md);
+  box-shadow: 0 10px 26px -24px rgba(34, 39, 29, 0.6);
+
+  h3 { font-size: 1.15rem; margin: 0.85rem 0 0.55rem; }
+}
+
+.ira-kit-card__number,
+.ira-kit-card__price {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.ira-kit-card__number { color: var(--ira-honey); letter-spacing: 0.08em; }
+.ira-kit-card__icon { color: var(--ira-honey); font-size: 1.8rem; margin-top: 1rem; }
+.ira-kit-card__price { color: var(--ira-forest); font-size: 1rem; margin-bottom: 1rem; }
+.ira-kit-card__contents {
+  flex: 1;
+  padding-left: 1.1rem;
+  margin: 0;
+  color: rgba(34, 39, 29, 0.72);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+.ira-kit-card__contents li { margin-bottom: 0.4rem; }
+.ira-kit-card__pending { color: rgba(34, 39, 29, 0.58); font-size: 0.9rem; }
+.ira-kit-card__link { align-self: flex-start; margin-top: 1.25rem; font-size: 0.82rem; padding: 0.65rem 1rem; }
+
+@media (max-width: 767.98px) {
+  .ira-kits-section__intro { display: block; }
+  .ira-kits-section__intro > p { margin-top: 1rem; }
+}
+
 // -- WHAT WE DO ---------------------------------------------------
 .ira-what-we-do {
   background: var(--ira-cream);

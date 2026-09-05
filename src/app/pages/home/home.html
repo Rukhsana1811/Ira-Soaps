@@ -61,6 +61,39 @@
   </div>
 </section>
 
+<!-- DIY KITS -->
+<section class="ira-kits-section">
+  <div class="container-ira">
+    <div class="ira-kits-section__intro">
+      <div>
+        <span class="eyebrow1">Make it yourself</span>
+        <h2>Everything for your next small batch</h2>
+      </div>
+      <p>Curated kits with measured ingredients, useful tools and a clear guide to get you making.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg" *ngFor="let kit of kits; let i = index">
+        <article class="ira-kit-card">
+          <span class="ira-kit-card__number">0{{ i + 1 }}</span>
+          <i class="ira-kit-card__icon bi bi-box-seam" aria-hidden="true"></i>
+          <h3>{{ kit.name }}</h3>
+          <strong class="ira-kit-card__price">{{ kit.price }}</strong>
+          <ul class="ira-kit-card__contents" *ngIf="kit.contents.length; else kitDetailsSoon">
+            <li *ngFor="let item of kit.contents">{{ item }}</li>
+          </ul>
+          <ng-template #kitDetailsSoon>
+            <p class="ira-kit-card__pending">Contents and pricing will be added soon.</p>
+          </ng-template>
+          <a class="btn-ira-outline ira-kit-card__link" [routerLink]="['/kits', kit.id]">
+            View kit details <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT WE DO -->
 <section class="ira-what-we-do">
   <div class="container-ira">

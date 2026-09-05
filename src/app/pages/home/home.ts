@@ -28,6 +28,66 @@ export class Home {
  @ViewChild('videoPlayer') videoElement!: ElementRef<HTMLVideoElement>;
   categories: CategoryMeta[];
   sessions: Sessions[];
+  kits = [
+    {
+      id: 'soap',
+      name: 'Soap kit',
+      price: '₹1,800',
+      contents: [
+        '1 kg goat milk soap base',
+        '1 kg glycerine soap base',
+        'Fragrance oil 30 ml',
+        'Foam booster 100 ml',
+        'IPA spray 100 ml',
+        'Herbal powder',
+        'Mould'
+      ]
+    },
+    {
+      id: 'face-wash',
+      name: 'Face wash kit',
+      price: '₹1,200',
+      contents: [
+        '1 litre transparent base',
+        '1 litre pearly base',
+        'DM water 200 ml',
+        'Hydrosol 200 ml',
+        'Fragrance oil 30 ml'
+      ]
+    },
+    {
+      id: 'body-wash',
+      name: 'Body wash & shower gel kit',
+      price: '₹1,200',
+      contents: [
+        '1 litre transparent base',
+        '1 litre pearly base',
+        'DM water 200 ml',
+        'Hydrosol 200 ml',
+        'Fragrance oil 30 ml'
+      ]
+    },
+    {
+      id: 'shampoo',
+      name: 'Shampoo kit',
+      price: '₹1,500',
+      contents: [
+        '1 litre transparent base',
+        '1 litre pearly base',
+        'DM water 200 ml',
+        'Hydrosol 200 ml',
+        'Fragrance oil 30 ml',
+        'Dried flowers',
+        'Herbal powder'
+      ]
+    },
+    {
+      id: 'concrete-art',
+      name: 'Concrete art kit',
+      price: 'Details coming soon',
+      contents: []
+    }
+  ];
   whatWeDo = [
     {
       title: 'Handmade products',

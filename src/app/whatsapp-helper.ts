@@ -17,6 +17,10 @@ export class WhatsappHelper {
     return this.link(`Hi Ira Soaps! I'd like to know more about the "${productName}".`);
   }
 
+  kitEnquiryLink(kitName: string): string {
+    return this.link(`Hi Ira Soaps! I'd like to enquire about the "${kitName}".`);
+  }
+
   sessionBookingLink(sessionName?: string): string {
     const msg = sessionName
       ? `Hi Ira Soaps! I'd like to book the live session: "${sessionName}".`

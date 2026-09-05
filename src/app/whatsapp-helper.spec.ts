@@ -12,4 +12,8 @@ describe('WhatsappHelper', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('creates a kit enquiry link', () => {
+    expect(service.kitEnquiryLink('Soap kit')).toContain(encodeURIComponent('Soap kit'));
+  });
 });

@@ -1,0 +1,46 @@
+<section class="ira-kit-detail-hero">
+  <div class="container-ira">
+    <a routerLink="/" class="ira-kit-detail-back"><i class="bi bi-arrow-left"></i> All kits</a>
+    <span class="eyebrow1">&nbsp;{{ activeKit.name }}</span>
+    <h1>{{ activeKit.name }}</h1>
+    <p>{{ activeKit.intro }}</p>
+    <strong class="ira-kit-detail-price">{{ activeKit.price }}</strong>
+  </div>
+</section>
+
+<section class="ira-kit-detail-body">
+  <div class="container-ira">
+    <div class="ira-kit-detail-layout">
+      <div>
+        <span class="eyebrow">Inside the kit</span>
+        <h2>What you will receive</h2>
+        <ul class="ira-kit-detail-contents" *ngIf="activeKit.contents.length; else detailsSoon">
+          <li *ngFor="let item of activeKit.contents"><i class="bi bi-check2"></i>{{ item }}</li>
+        </ul>
+        <ng-template #detailsSoon>
+          <p class="ira-kit-detail-pending">Contents will be announced soon.</p>
+        </ng-template>
+      </div>
+
+      <div class="ira-kit-detail-gallery">
+        <article *ngFor="let image of activeKit.images" class="ira-kit-detail-image">
+          <img [src]="image.src" [alt]="image.alt">
+          <p>{{ image.description }}</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ira-other-kits">
+  <div class="container-ira">
+    <span class="eyebrow">Keep exploring</span>
+    <h2>See the other kits</h2>
+    <div class="ira-other-kits-grid">
+      <a *ngFor="let kit of kits" [routerLink]="['/kits', kit.id]" class="ira-other-kit" [class.active]="kit.id === activeKit.id">
+        <span>{{ kit.name }}</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

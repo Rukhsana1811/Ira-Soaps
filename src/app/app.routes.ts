@@ -12,6 +12,12 @@ export const routes: Routes = [{
   title: 'Shop — Ira Soaps'
 },
 {
+  path: 'kits/:kitId',
+  loadComponent: () =>
+    import('./pages/kit-details/kit-details').then((m) => m.KitDetailsComponent),
+  title: 'DIY Kit — Ira Soaps'
+},
+{
   path: 'live-sessions',
   loadComponent: () =>
     import('./pages/live-sessions/live-sessions').then((m) => m.LiveSessions
