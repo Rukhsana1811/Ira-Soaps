@@ -18,47 +18,149 @@ export class Product {
 
   readonly products: Products[] = [
     {
-      id: 'oat-honey-bar',
-      name: 'Oat & Honey Curing Bar',
+      id: 'honey-bar',
+      name: 'Honey Soap',
       category: 'soaps',
-      tagline: 'Our founding recipe',
+      img: 'assets/products/soaps/honey.png',
+      tagline: 'Soft, nourishing cleanse',
       description:
-        'A slow melt & pour bar built on oat milk and raw honey, cured for six weeks for a hard, long-lasting finish. No parabens, no sulphates, no synthetic fragrance.',
-      price: 249,
+        'Raw honey helps draw in moisture while this gentle bar leaves skin feeling soft, comfortable and refreshed.',
+      price: 120,
       size: '100 g bar',
-      ingredients: ['Oat milk', 'Raw honey', 'Cold-pressed coconut oil', 'Shea butter'],
+      ingredients: ['Honey Essential Oil', 'Glycerine', 'Coconut oil'],
       icon: 'bar',
       hasLiveSession: true
     },
     {
-      id: 'neem-tulsi-bar',
-      name: 'Neem & Tulsi Bar',
+      id: 'floating-flowers-bar',
+      name: 'Floating Flowers Soap',
+      img: 'assets/products/soaps/floating-flowers.jpeg',
       category: 'soaps',
-      tagline: 'For blemish-prone skin',
+      tagline: 'Botanical, uplifting bar',
       description:
-        'Neem and tulsi leaf infused in oil for 21 days before pouring, for a bar that is clarifying without stripping the skin barrier.',
-      price: 229,
+        'A joyful floral bar that gently cleanses while dried botanicals add a naturally beautiful finish to your bath ritual.',
+      price: 150,
       size: '100 g bar',
-      ingredients: ['Neem leaf infusion', 'Tulsi', 'Castor oil', 'Coconut oil'],
+      ingredients: ['Botanical flowers', 'Glycerine', 'Coconut oil'],
       icon: 'bar',
       hasLiveSession: true
     },
     {
-      id: 'charcoal-clay-bar',
-      name: 'Activated Charcoal & Clay Bar',
+      id: 'coffee-bar',
+      name: 'Coffee Soap',
       category: 'soaps',
-      tagline: 'Deep-clean, weekly use',
+      img: 'assets/products/soaps/coffee.jpeg',
+      tagline: 'Bright, invigorating scrub',
       description:
-        'Bentonite clay and activated charcoal draw out excess oil; sweet almond oil keeps the bar from feeling tight on skin.',
-      price: 259,
+        'Coffee grounds provide a light exfoliating polish, helping skin feel smoother and awake without a harsh scrub.',
+      price: 140,
       size: '100 g bar',
-      ingredients: ['Bentonite clay', 'Activated charcoal', 'Sweet almond oil'],
+      ingredients: ['Coffee grounds', 'Cocoa butter', 'Coconut oil'],
+      icon: 'bar',
+      hasLiveSession: true
+    },
+    {
+      id: 'baby-bar',
+      name: 'Baby Gentle Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/baby.png',
+      tagline: 'Extra-gentle everyday care',
+      description:
+        'A mild, fragrance-free style bar made for a soft, simple cleanse when skin needs a little extra care.',
+      price: 70,
+      size: '100 g bar',
+      ingredients: ['Shea butter', 'Glycerine', 'Oat extract'],
       icon: 'bar',
       hasLiveSession: false
     },
     {
+      id: 'aloe-vera-bar',
+      name: 'Aloe Vera Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/aloevera.png',
+      tagline: 'Cooling, refreshing cleanse',
+      description:
+        'Aloe vera brings a fresh, soothing feel to this everyday bar, leaving skin clean without a dry after-feel.',
+      price: 160,
+      size: '100 g bar',
+      ingredients: ['Aloe vera', 'Coconut oil', 'Glycerine'],
+      icon: 'bar',
+      hasLiveSession: false
+    },
+    {
+      id: 'oat-bar',
+      name: 'Oat Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/oats.jpeg',
+      tagline: 'Comforting, skin-softening bar',
+      description:
+        'Finely milled oats gently cleanse and comfort dry-feeling skin for a calm, smooth finish after every wash.',
+      price: 140,
+      size: '100 g bar',
+      ingredients: ['Colloidal oats', 'Shea butter', 'Coconut oil'],
+      icon: 'bar',
+      hasLiveSession: false
+    },
+    {
+      id: 'multi-layered-herbal-bar',
+      name: 'Multi-Layered Herbal Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/multilayered-herbal-bar.png',
+      tagline: 'Botanical all-rounder',
+      description:
+        'A layered herbal bar combining traditional powders with a creamy lather to cleanse, polish and refresh the skin.',
+      price: 150,
+      size: '100 g bar',
+      ingredients: ['Rose powder', 'Charcoal powder', 'Manjishtha', 'Glycerine'],
+      icon: 'bar',
+      hasLiveSession: true
+    },
+    {
+      id: 'lavender-bar',
+      name: 'Lavender Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/lavendar-dual.png',
+      tagline: 'Calming evening cleanse',
+      description:
+        'Lavender gives this creamy bar a gentle, calming character while plant oils help skin feel clean and conditioned.',
+      price: 180,
+      size: '100 g bar',
+      ingredients: ['Lavender oil', 'Shea butter', 'Coconut oil'],
+      icon: 'bar',
+      hasLiveSession: false
+    },
+    {
+      id: 'orange-bar',
+      name: 'Orange Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/orange-soap.jpeg',
+      tagline: 'Citrus-bright morning bar',
+      description:
+        'A cheerful citrus bar that leaves skin feeling fresh and energised with a clean, sunny finish.',
+      price: 180,
+      size: '100 g bar',
+      ingredients: ['Orange slice', 'Citrus oil', 'Coconut oil'],
+      icon: 'bar',
+      hasLiveSession: false
+    },
+    {
+      id: 'turmeric-bar',
+      name: 'Turmeric Soap',
+      category: 'soaps',
+      img: 'assets/products/soaps/turmeric-dual.jpeg',
+      tagline: 'Glow-focused herbal care',
+      description:
+        'Turmeric and nourishing plant oils make this a warming, clarifying bar for a fresh, clean-feeling complexion.',
+      price: 130,
+      size: '100 g bar',
+      ingredients: ['Turmeric', 'Sandalwood', 'Coconut oil'],
+      icon: 'bar',
+      hasLiveSession: true
+    },
+    {
       id: 'reetha-shikakai-shampoo',
       name: 'Reetha–Shikakai',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'shampoo',
       tagline: 'One bar, ~80 washes',
       description:
@@ -72,6 +174,7 @@ export class Product {
     {
       id: 'onion-hibiscus-shampoo',
       name: 'Onion & Hibiscus',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'shampoo',
       tagline: 'For strengthening & shine',
       description:
@@ -85,6 +188,7 @@ export class Product {
     {
       id: 'blue-pea-hibiscus-shampoo',
       name: 'Blue Pea & Hibiscus',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'shampoo',
       tagline: 'For strengthening & shine',
       description:
@@ -98,6 +202,7 @@ export class Product {
     {
       id: 'rosewater-facewash',
       name: 'Rosewater Cream Face Wash',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'face-wash',
       tagline: 'Daily, all skin types',
       description:
@@ -111,6 +216,7 @@ export class Product {
     {
       id: 'turmeric-gram-facewash',
       name: 'Turmeric & Gram Flour Wash',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'face-wash',
       tagline: 'Brightening, gentle exfoliant',
       description:
@@ -124,6 +230,7 @@ export class Product {
     {
       id: 'lavender-body-wash',
       name: 'Lavender & Oat Body Wash',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'shower-gel',
       tagline: 'Calming, everyday lather',
       description:
@@ -137,6 +244,7 @@ export class Product {
     {
       id: 'citrus-mint-shower-gel',
       name: 'Citrus & Mint Shower Gel',
+      img: 'assets/oat-honey-bar.jpeg',
       category: 'shower-gel',
       tagline: 'Bright, energising wash',
       description:
@@ -148,56 +256,200 @@ export class Product {
       hasLiveSession: false
     },
     {
-      id: 'concrete-diy-vase-kit',
-      name: 'Pour-Your-Own Vase DIY Kit',
+      id: 'concrete-2-vase-with-tray',
+      name: 'Two Vases with Tray',
+      img: 'assets/products/concrete/2-vase-with-tray.png',
       category: 'concrete-art',
-      tagline: 'Beginner friendly, 1 vase',
+      tagline: 'Coordinated display set',
       description:
-        'Everything you need to hand-pour one minimalist concrete vase at home: pre-measured mix, silicone mould, mixing tools and a printed guide.',
-      price: 899,
-      size: 'Makes 1 vase',
-      ingredients: ['Fine-cure concrete mix', 'Silicone mould', 'Mixing tools', 'Guide card'],
-      icon: 'kit',
-      hasLiveSession: true
+        'A pair of hand-finished concrete vases on a matching tray, made to bring structure and texture to shelves, tables and entryways.',
+      price: 1499,
+      size: 'Set of 3 pieces',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'vase',
+      hasLiveSession: false
     },
     {
-      id: 'concrete-jar-set',
-      name: 'Hand-Poured Storage Jar Set',
+      id: 'concrete-candle-bouquet-tray-set',
+      name: 'Candle Bouquet Tray Set',
+      img: 'assets/products/concrete/candle-bookey-tray-set.png',
       category: 'concrete-art',
-      tagline: 'Set of 2, sealed finish',
+      tagline: 'Textured candle arrangement',
       description:
-        'Two hand-poured concrete jars with wooden lids, sealed for everyday desk or bathroom storage. Every piece is slightly one-of-a-kind.',
-      price: 1099,
-      size: 'Set of 2',
-      ingredients: ['Fine-cure concrete', 'Sealant', 'Wooden lids'],
+        'A sculptural concrete tray paired with small decorative candles, creating an easy centrepiece for a coffee table, shelf or bedside.',
+      price: 1299,
+      size: 'Tray and candle set',
+      ingredients: ['Fine-cure concrete', 'Soy wax', 'Cotton wicks'],
+      icon: 'candle',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-candle-bouquet',
+      name: 'Concrete Candle Bouquet',
+      img: 'assets/products/concrete/candle-bookey.png',
+      category: 'concrete-art',
+      tagline: 'Hand-poured candle cluster',
+      description:
+        'A playful cluster of concrete candle holders with a tactile finish, designed to add a warm handmade detail to compact spaces.',
+      price: 899,
+      size: 'Candle holder set',
+      ingredients: ['Fine-cure concrete', 'Soy wax', 'Essential oil blend'],
+      icon: 'candle',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-decorative-tray',
+      name: 'Decorative Concrete Tray',
+      img: 'assets/products/concrete/decorative-tray.png',
+      category: 'concrete-art',
+      tagline: 'Everyday catch-all',
+      description:
+        'A versatile hand-poured tray for jewellery, keys, candles or small desk essentials, finished with a smooth protective seal.',
+      price: 599,
+      size: 'Single tray',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'kit',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-pink-marble-heart',
+      name: 'Light Pink Marble Heart',
+      img: 'assets/products/concrete/light-pink-marble-effect-heart.png',
+      category: 'concrete-art',
+      tagline: 'Soft marble-effect decor',
+      description:
+        'A small heart-shaped concrete accent with a gentle pink marble effect, made for gifting, styling a shelf or adding softness to a desk.',
+      price: 399,
+      size: 'Single decor piece',
+      ingredients: ['Fine-cure concrete', 'Pink pigment', 'Protective sealant'],
+      icon: 'kit',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-jewellery-jar-tray-set',
+      name: 'Jewellery Jar and Tray Set',
+      img: 'assets/products/concrete/jewelleryjar-tray-set.png',
+      category: 'concrete-art',
+      tagline: 'Organised bedside styling',
+      description:
+        'A hand-poured jar and tray set for rings, earrings and other small treasures, combining practical storage with sculptural texture.',
+      price: 999,
+      size: 'Jar and tray set',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
       icon: 'jar',
       hasLiveSession: false
     },
     {
-      id: 'concrete-taper-vase',
-      name: 'Tapered Studio Vase',
+      id: 'concrete-jewellery-jar-vase-tray',
+      name: 'Jewellery Jar, Vase and Tray Set',
+      img: 'assets/products/concrete/jewellery-jar-with-vase-tray.jpg',
       category: 'concrete-art',
-      tagline: 'Statement decor piece',
+      tagline: 'Complete vanity set',
       description:
-        'A tall, tapered vase cast in fine-cure concrete with a smooth hand-finished surface — designed for dried stems or a single statement bloom.',
-      price: 1299,
-      size: '9 in height',
-      ingredients: ['Fine-cure concrete', 'Sealant'],
-      icon: 'vase',
-      hasLiveSession: true
+        'A coordinated concrete set with a jewellery jar, petite vase and tray for a calm, collected dressing table or bedside arrangement.',
+      price: 1399,
+      size: 'Set of 3 pieces',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'jar',
+      hasLiveSession: false
     },
     {
-      id: 'concrete-soy-candle',
-      name: 'Concrete Vessel Soy Candle',
+      id: 'concrete-jar-vase-tray-set',
+      name: 'Jar, Vase and Tray Set',
+      img: 'assets/products/concrete/jar-vase-tray-set.png',
       category: 'concrete-art',
-      tagline: 'Reusable after burning',
+      tagline: 'Coordinated home accents',
       description:
-        'A soy wax candle hand-poured into our own concrete vessel — once the candle is done, the vessel becomes a planter or catch-all.',
-      price: 649,
-      size: '180 g soy wax',
-      ingredients: ['Soy wax', 'Cotton wick', 'Concrete vessel', 'Essential oil blend'],
-      icon: 'candle',
-      hasLiveSession: true
+        'Three useful concrete accents designed to work together: a storage jar, a small vase and a catch-all tray with a hand-finished surface.',
+      price: 1299,
+      size: 'Set of 3 pieces',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'jar',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-heart',
+      name: 'Plain Concrete Heart',
+      img: 'assets/products/concrete/heart-plain.png',
+      category: 'concrete-art',
+      tagline: 'Minimal handmade accent',
+      description:
+        'A simple heart-shaped concrete piece with a clean, natural finish that works as a thoughtful gift or a quiet decorative detail.',
+      price: 299,
+      size: 'Single decor piece',
+      ingredients: ['Fine-cure concrete', 'Protective sealant'],
+      icon: 'kit',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-pump-vase',
+      name: 'Concrete Pump Vase',
+      img: 'assets/products/concrete/pump-vase.png',
+      category: 'concrete-art',
+      tagline: 'Functional sculptural piece',
+      description:
+        'A compact concrete pump-style vase that brings an architectural silhouette to a shelf while holding a few favourite stems.',
+      price: 699,
+      size: 'Single vase',
+      ingredients: ['Fine-cure concrete', 'Pump fitting', 'Protective sealant'],
+      icon: 'vase',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-oval-big-tray',
+      name: 'Large Oval Concrete Tray',
+      img: 'assets/products/concrete/oval-big-tray.png',
+      category: 'concrete-art',
+      tagline: 'Roomy serving and display tray',
+      description:
+        'A generous oval tray for candles, bottles, jewellery or serving details, cast and sanded by hand for a softly rounded finish.',
+      price: 799,
+      size: 'Single large tray',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'kit',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-long-vase',
+      name: 'Long Concrete Vase',
+      img: 'assets/products/concrete/long-vase.png',
+      category: 'concrete-art',
+      tagline: 'Linear statement vase',
+      description:
+        'A long, clean-lined concrete vase for dried stems and minimal arrangements, bringing a grounded handmade feel to a console or dining table.',
+      price: 999,
+      size: 'Single vase',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'vase',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-red-marble-heart',
+      name: 'Red Marble Heart',
+      img: 'assets/products/concrete/red-marble-heart.png',
+      category: 'concrete-art',
+      tagline: 'Bold marble-effect decor',
+      description:
+        'A rich red marble-effect heart with natural variation in every pour, made as a memorable gift or a warm accent for a small space.',
+      price: 399,
+      size: 'Single decor piece',
+      ingredients: ['Fine-cure concrete', 'Red pigment', 'Protective sealant'],
+      icon: 'kit',
+      hasLiveSession: false
+    },
+    {
+      id: 'concrete-vase-tray-set',
+      name: 'Vase and Tray Set',
+      img: 'assets/products/concrete/vase-tray-set.png',
+      category: 'concrete-art',
+      tagline: 'Simple paired styling',
+      description:
+        'A hand-poured vase and matching tray that make an easy styled pair for dried flowers, candles, jewellery or everyday essentials.',
+      price: 899,
+      size: 'Vase and tray set',
+      ingredients: ['Fine-cure concrete', 'Pigment', 'Protective sealant'],
+      icon: 'vase',
+      hasLiveSession: false
     }
   ];
 

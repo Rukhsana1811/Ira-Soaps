@@ -11,13 +11,12 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../product';
 import { WhatsappHelper } from '../../whatsapp-helper';
-import { ProductIcon } from '../product-icon/product-icon';
 import { Products } from '../../products';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, ProductIcon],
+  imports: [CommonModule],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss'
 })

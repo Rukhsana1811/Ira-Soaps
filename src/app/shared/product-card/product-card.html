@@ -1,9 +1,10 @@
 <article class="card-ira ira-product-card">
   <div class="ira-product-card__media">
-    <app-product-icon [icon]="product.icon" size="lg"></app-product-icon>
-    <span class="batch-tag" *ngIf="product.hasLiveSession">
+    <img [src]="product.img" [alt]="product.name" class="ira-product-card__image w-100" />
+    <!-- <app-product-icon [icon]="product.icon" size="lg"></app-product-icon> -->
+    <!-- <span class="batch-tag" *ngIf="product.hasLiveSession">
       <i class="bi bi-camera-video"></i>&nbsp;Live session available
-    </span>
+    </span> -->
   </div>
 
   <div class="ira-product-card__body">

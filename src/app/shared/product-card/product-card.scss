@@ -60,3 +60,15 @@
   strong { font-family: var(--font-display); font-size: 1.15rem; }
   span { font-size: 0.72rem; color: var(--ira-sage); font-family: var(--font-mono); }
 }
+
+img {
+  height:300px;
+}
+
+
+.eyebrow {
+  color: var(--ira-honey) !important;
+}
+.eyebrow:before {
+  background: var(--ira-honey) !important;
+}

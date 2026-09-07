@@ -13,20 +13,24 @@ import { RouterLink } from '@angular/router';
 import { Product } from '../../product';
 import { WhatsappHelper } from '../../whatsapp-helper';
 import { WireCut } from '../../pages/wire-cut/wire-cut';
-import { CategoryMeta, Sessions } from '../../products';
+import { CategoryMeta, Products, Sessions } from '../../products';
+import { ProductCard } from '../../shared/product-card/product-card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule,
     RouterLink,
-    WireCut],
+    WireCut,
+    ProductCard],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class Home {
  @ViewChild('videoPlayer') videoElement!: ElementRef<HTMLVideoElement>;
   categories: CategoryMeta[];
+  soaps: Products[];
+  concreteProducts: Products[];
   sessions: Sessions[];
   kits = [
     {
@@ -133,6 +137,8 @@ export class Home {
     public whatsapp: WhatsappHelper
   ) {
     this.categories = this.productService.categories.filter((c) => c.id !== 'all');
+    this.soaps = this.productService.getByCategory('soaps');
+    this.concreteProducts = this.productService.getByCategory('concrete-art');
     this.sessions = this.productService.sessions;
   }
 
