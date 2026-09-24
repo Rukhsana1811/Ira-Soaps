@@ -12,6 +12,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { WhatsappHelper } from '../../whatsapp-helper';
+import { Cart } from '../../cart';
 
 @Component({
   selector: 'app-navbar',
@@ -23,7 +24,7 @@ import { WhatsappHelper } from '../../whatsapp-helper';
 export class Navbar {
   collapsed = true;
 
-  constructor(public whatsapp: WhatsappHelper) {}
+  constructor(public whatsapp: WhatsappHelper, public cart: Cart) {}
 
   toggle(): void {
     this.collapsed = !this.collapsed;

@@ -140,3 +140,17 @@
   width: 80px;
   border-radius: 100%;
 }
+
+.ira-nav__cart span {
+  display: inline-grid;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  margin-left: 0.25rem;
+  padding: 0 0.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ira-forest);
+  color: var(--ira-cream);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}

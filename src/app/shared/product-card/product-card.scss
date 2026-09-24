@@ -74,6 +74,47 @@
   margin-top: 0;
 }
 
+.upi-quantity-control {
+  display: grid;
+  grid-template-columns: 1fr 2.25rem 3.25rem 2.25rem;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.25rem 0 0.5rem;
+  padding: 0.8rem;
+  border: 1px solid var(--ira-line);
+  background: rgb(169 156 134 / 8%);
+}
+
+.upi-quantity-control > div {
+  display: grid;
+  gap: 0.15rem;
+  text-align: left;
+}
+
+.upi-quantity-control small {
+  color: #6c6267;
+  font-size: 0.75rem;
+}
+
+.upi-quantity-control button {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid var(--ira-line);
+  background: #fffaf5;
+  color: var(--ira-ink);
+}
+
+.upi-quantity-control input {
+  width: 3.25rem;
+  height: 2.25rem;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--ira-line);
+  text-align: center;
+}
+
 .upi-payment-modal__proceed-button {
   width: 100%;
   margin-top: 0.75rem;
@@ -265,4 +306,42 @@
 }
 .eyebrow:before {
   background: var(--ira-honey) !important;
+}
+
+.upi-order-summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1rem;
+  margin: 0.5rem 0;
+  padding: 0.85rem;
+  border: 1px solid var(--ira-line);
+  font-size: 0.85rem;
+}
+
+.upi-order-summary__total {
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--ira-line);
+  font-weight: 700;
+}
+
+.upi-payment-modal__order-summary {
+  font-size: 0.8rem;
+  color: #6c6267;
+}
+
+.upi-submission-success__email {
+  margin-top: 0.75rem;
+}
+
+.ira-product-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.ira-product-card__actions .btn-ira-primary,
+.ira-product-card__actions .btn-ira-outline {
+  padding: 0.65rem 0.95rem;
+  font-size: 0.82rem;
 }

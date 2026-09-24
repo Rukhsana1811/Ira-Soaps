@@ -12,6 +12,12 @@ export const routes: Routes = [{
   title: 'Shop — Ira Soaps'
 },
 {
+  path: 'order',
+  loadComponent: () =>
+    import('./pages/order/order').then((m) => m.Order),
+  title: 'Your Order — Ira Soaps'
+},
+{
   path: 'kits/:kitId',
   loadComponent: () =>
     import('./pages/kit-details/kit-details').then((m) => m.KitDetailsComponent),

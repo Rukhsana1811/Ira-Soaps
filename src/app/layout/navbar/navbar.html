@@ -16,6 +16,9 @@
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Home</a>
       <a routerLink="/about" routerLinkActive="active" (click)="close()">About Us</a>
       <a routerLink="/products" routerLinkActive="active" (click)="close()">Shop</a>
+      <a class="ira-nav__cart" routerLink="/order" routerLinkActive="active" (click)="close()">
+        <i class="bi bi-cart3"></i> Cart <span>{{ cart.totalItems() }}</span>
+      </a>
       <a routerLink="/live-sessions" routerLinkActive="active" (click)="close()">Live Sessions</a>
       <a routerLink="/contact" routerLinkActive="active" (click)="close()">Contact</a>
       <a class="text-light p-2 btn-ira-whatsapp ira-nav__cta" [href]="whatsapp.generalLink()" target="_blank" rel="noopener" (click)="close()">

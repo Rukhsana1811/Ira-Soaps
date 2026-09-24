@@ -17,83 +17,14 @@
         <strong>&#8377;{{ product.price }}</strong>
         <span>{{ product.size }}</span>
       </div>
-      <button type="button" class="btn-ira-primary" (click)="checkoutProduct()">
-        <i class="bi bi-bag-check"></i> Order now
-      </button>
+      <div class="ira-product-card__actions">
+        <button type="button" class="btn-ira-outline" (click)="addToCart()">
+          <i class="bi bi-cart-plus"></i> Add to cart
+        </button>
+        <button type="button" class="btn-ira-primary" (click)="checkoutProduct()">
+          <i class="bi bi-bag-check"></i> Buy now
+        </button>
+      </div>
     </div>
   </div>
 </article>
-
-<div class="upi-payment-backdrop" *ngIf="checkoutOpen" (click)="closePayment()">
-  <section class="upi-payment-modal" (click)="$event.stopPropagation()" aria-labelledby="upi-payment-title">
-    <button type="button" class="upi-payment-modal__close" aria-label="Close payment" (click)="closePayment()">
-      <i class="bi bi-x-lg"></i>
-    </button>
-
-    <div *ngIf="!showPaymentStep" class="upi-order-step">
-      <span class="eyebrow">Delivery details</span>
-      <h2 id="upi-payment-title">Order now</h2>
-      <p>Enter your details before proceeding to payment.</p>
-
-      <form class="upi-customer-form" (ngSubmit)="proceedToPayment()">
-        <label for="upi-full-name-{{ product.id }}">Full name</label>
-        <input id="upi-full-name-{{ product.id }}" class="form-control" type="text" name="fullName" [(ngModel)]="customerDetails.fullName" required autocomplete="name" />
-
-        <label for="upi-contact-{{ product.id }}">Contact number</label>
-        <input id="upi-contact-{{ product.id }}" class="form-control" type="tel" name="contactNumber" [(ngModel)]="customerDetails.contactNumber" (ngModelChange)="validateContactNumber($event)" required pattern="[0-9]{10}" inputmode="numeric" maxlength="10" autocomplete="tel" aria-describedby="upi-contact-help" />
-        <small id="upi-contact-help" class="upi-payment-modal__help">Enter exactly 10 digits.</small>
-        <p class="upi-payment-modal__error" *ngIf="contactNumberError">{{ contactNumberError }}</p>
-
-        <label for="upi-address-{{ product.id }}">Address</label>
-        <textarea id="upi-address-{{ product.id }}" class="form-control" name="address" rows="3" [(ngModel)]="customerDetails.address" required autocomplete="street-address"></textarea>
-
-        <label for="upi-city-state-{{ product.id }}">City / State</label>
-        <input id="upi-city-state-{{ product.id }}" class="form-control" type="text" name="cityState" [(ngModel)]="customerDetails.cityState" required autocomplete="address-level2" />
-
-        <label for="upi-pincode-{{ product.id }}">Pincode</label>
-        <input id="upi-pincode-{{ product.id }}" class="form-control" type="text" name="pincode" [(ngModel)]="customerDetails.pincode" (ngModelChange)="validatePincode($event)" required pattern="[0-9]{6}" inputmode="numeric" maxlength="6" autocomplete="postal-code" aria-describedby="upi-pincode-help" />
-        <small id="upi-pincode-help" class="upi-payment-modal__help">Enter exactly 6 digits.</small>
-        <p class="upi-payment-modal__error" *ngIf="pincodeError">{{ pincodeError }}</p>
-
-        <p class="upi-payment-modal__error" *ngIf="customerDetailsError">{{ customerDetailsError }}</p>
-        <button type="submit" class="btn-ira-primary upi-payment-modal__proceed-button">
-          <i class="bi bi-arrow-right-circle"></i> Proceed to payment
-        </button>
-      </form>
-    </div>
-
-    <div *ngIf="showPaymentStep" class="upi-payment-step">
-      <span class="eyebrow">Direct UPI payment</span>
-      <h2>Pay &#8377;{{ paymentRequest?.amount }}</h2>
-      <p>Scan the QR code with any UPI app, or use the button on your phone.</p>
-
-      <img class="upi-payment-modal__qr" [src]="paymentRequest?.qrCodeUrl" alt="UPI payment QR code" />
-      <p class="upi-payment-modal__order">Order {{ paymentRequest?.orderId }}</p>
-
-      <a class="btn-ira-primary upi-payment-modal__mobile-button" [href]="paymentRequest?.upiUri">
-        <i class="bi bi-phone"></i> Open UPI app
-      </a>
-
-      <label class="upi-payment-modal__label" for="upi-utr-{{ product.id }}">After paying, enter the UTR shown in your UPI app</label>
-      <input id="upi-utr-{{ product.id }}" class="form-control" type="text" name="utr" [(ngModel)]="utr" (ngModelChange)="validatePaymentReference()" placeholder="e.g. 123456789012" aria-describedby="upi-utr-help" />
-      <small id="upi-utr-help" class="upi-payment-modal__help">Usually a 12-digit number. Some apps use letters too.</small>
-      <p class="upi-payment-modal__error" *ngIf="utrError">{{ utrError }}</p>
-      <p class="upi-payment-modal__success" *ngIf="paymentSubmitted">Reference received. We will verify the payment before dispatch.</p>
-      <button type="button" class="btn-ira-primary" [disabled]="!!utrError || utr.trim().length < 6 || paymentSubmitted" (click)="submitPaymentReference()">
-        {{ paymentSubmitted ? 'Submitted for verification' : 'Submit payment reference' }}
-      </button>
-
-    </div>
-  </section>
-</div>
-
-<div class="upi-submission-success" *ngIf="showSubmissionSuccess" role="status" aria-live="polite">
-  <span class="upi-payment-success__icon" aria-hidden="true">
-    <i class="bi bi-check-lg"></i>
-  </span>
-  <strong>Submitted successfully</strong>
-  <span>Your payment reference is ready for verification.</span>
-  <button type="button" class="upi-submission-success__close" aria-label="Close success message" (click)="closeSubmissionSuccess()">
-    <i class="bi bi-x-lg"></i>
-  </button>
-</div>

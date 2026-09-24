@@ -15,8 +15,8 @@ export class UpiService {
   private readonly upiId = 'rukhsanakhan1811-1@oksbi';
   private readonly payeeName = 'Ira Soaps';
 
-  createPaymentRequest(product: Products): UpiPaymentRequest {
-    const amount = Number((product.price || 0).toFixed(2));
+  createPaymentRequest(product: Products, totalAmount = product.price || 0): UpiPaymentRequest {
+    const amount = Number(totalAmount.toFixed(2));
     const orderId = `IRA${Date.now().toString(36).toUpperCase()}`;
     const upiUri = `upi://pay?${new URLSearchParams({
       pa: this.upiId,

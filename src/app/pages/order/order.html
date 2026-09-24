@@ -1,0 +1,116 @@
+<main class="order-page">
+   <section class="order-flow pt-3">
+    <div class="container-ira">
+      <div class="order-steps" aria-label="Order progress">
+        <span [class.active]="stage === 'cart' || stage === 'details' || stage === 'payment'">01 Cart</span>
+        <span [class.active]="stage === 'details' || stage === 'payment'">02 Address</span>
+        <span [class.active]="stage === 'payment'">03 Payment</span>
+        <span [class.active]="stage === 'success'">04 Done</span>
+      </div>
+
+      <div class="order-empty" *ngIf="stage === 'cart' && !items.length">
+        <i class="bi bi-basket3"></i>
+        <h2>Your cart is waiting.</h2>
+        <p>Choose something handmade from the shelf and it will appear here.</p>
+        <a class="btn-ira-primary" routerLink="/products"><i class="bi bi-arrow-left"></i> Browse products</a>
+      </div>
+
+      <div class="order-layout" *ngIf="stage !== 'success' && items.length">
+        <div class="order-main">
+          <div class="order-panel" *ngIf="stage === 'cart'">
+            <div class="order-panel__heading">
+              <div>
+                <span class="eyebrow">Step one</span>
+                <h2>Your cart</h2>
+              </div>
+              <span class="order-count">{{ cart.totalItems() }} item{{ cart.totalItems() === 1 ? '' : 's' }}</span>
+            </div>
+
+            <div class="order-item" *ngFor="let item of items">
+              <img [src]="item.image" [alt]="item.title" />
+              <div class="order-item__info">
+                <strong>{{ item.title }}</strong>
+                <small>{{ item.unitOrDate }} · ₹{{ item.price }} each</small>
+                <button type="button" class="order-remove" (click)="removeItem(item)"><i class="bi bi-trash3"></i> Remove</button>
+              </div>
+              <div class="order-quantity">
+                <button type="button" aria-label="Decrease quantity" (click)="updateQuantity(item, -1)"><i class="bi bi-dash"></i></button>
+                <span>{{ item.quantity }}</span>
+                <button type="button" aria-label="Increase quantity" (click)="updateQuantity(item, 1)"><i class="bi bi-plus"></i></button>
+              </div>
+              <strong class="order-item__total">₹{{ item.price * item.quantity }}</strong>
+            </div>
+
+            <button type="button" class="btn-ira-primary" (click)="continueToDetails()"><i class="bi bi-arrow-right"></i> Continue to address</button>
+          </div>
+
+          <div class="order-panel" *ngIf="stage === 'details'">
+            <div class="order-panel__heading">
+              <div><span class="eyebrow">Step two</span><h2>Delivery details</h2></div>
+              <button type="button" class="order-back" (click)="stage = 'cart'"><i class="bi bi-arrow-left"></i> Cart</button>
+            </div>
+            <form class="order-form" (ngSubmit)="proceedToPayment()">
+              <label for="order-full-name">Full name</label>
+              <input id="order-full-name" class="form-control" type="text" name="fullName" [(ngModel)]="customerDetails.fullName" required autocomplete="name" />
+              <label for="order-contact">Contact number</label>
+              <input id="order-contact" class="form-control" type="tel" name="contactNumber" [(ngModel)]="customerDetails.contactNumber" (ngModelChange)="validateContactNumber($event)" required inputmode="numeric" maxlength="10" autocomplete="tel" />
+              <small>Enter exactly 10 digits.</small>
+              <p class="order-error" *ngIf="contactNumberError">{{ contactNumberError }}</p>
+              <label for="order-address">Address</label>
+              <textarea id="order-address" class="form-control" name="address" rows="4" [(ngModel)]="customerDetails.address" required autocomplete="street-address"></textarea>
+              <label for="order-city-state">City / State</label>
+              <input id="order-city-state" class="form-control" type="text" name="cityState" [(ngModel)]="customerDetails.cityState" required autocomplete="address-level2" />
+              <label for="order-pincode">Pincode</label>
+              <input id="order-pincode" class="form-control" type="text" name="pincode" [(ngModel)]="customerDetails.pincode" (ngModelChange)="validatePincode($event)" required inputmode="numeric" maxlength="6" autocomplete="postal-code" />
+              <small>Enter exactly 6 digits.</small>
+              <p class="order-error" *ngIf="pincodeError">{{ pincodeError }}</p>
+              <p class="order-error" *ngIf="customerDetailsError">{{ customerDetailsError }}</p>
+              <button type="submit" class="btn-ira-primary"><i class="bi bi-lock"></i> Continue to payment</button>
+            </form>
+          </div>
+
+          <div class="order-panel" *ngIf="stage === 'payment'">
+            <div class="order-panel__heading">
+              <div><span class="eyebrow">Step three</span><h2>Pay with UPI</h2></div>
+              <button type="button" class="order-back" (click)="stage = 'details'"><i class="bi bi-arrow-left"></i> Address</button>
+            </div>
+            <div class="payment-copy">
+              <span class="payment-amount">₹{{ paymentRequest?.amount }}</span>
+              <p>Scan the QR code with any UPI app, or open UPI directly on your phone.</p>
+              <img class="payment-qr" [src]="paymentRequest?.qrCodeUrl" alt="UPI payment QR code" />
+              <strong>Order {{ paymentRequest?.orderId }}</strong>
+              <a class="btn-ira-outline" [href]="paymentRequest?.upiUri"><i class="bi bi-phone"></i> Open UPI app</a>
+            </div>
+            <label for="order-utr">After paying, enter the UTR shown in your UPI app</label>
+            <input id="order-utr" class="form-control" type="text" name="utr" [(ngModel)]="utr" (ngModelChange)="validatePaymentReference()" placeholder="e.g. 123456789012" />
+            <small>Usually a 12-digit number. Some apps use letters too.</small>
+            <p class="order-error" *ngIf="utrError">{{ utrError }}</p>
+            <p class="order-error" *ngIf="emailError">{{ emailError }}</p>
+            <button type="button" class="btn-ira-primary order-submit" [disabled]="!!utrError || utr.trim().length < 6 || isSendingEmail" (click)="submitPaymentReference()">
+              <i class="bi" [class.bi-hourglass-split]="isSendingEmail" [class.bi-check-lg]="!isSendingEmail"></i>
+              {{ isSendingEmail ? 'Sending order email...' : 'Confirm payment reference' }}
+            </button>
+          </div>
+        </div>
+
+        <aside class="order-summary">
+          <span class="eyebrow">Order summary</span>
+          <h2>{{ cart.totalItems() }} item{{ cart.totalItems() === 1 ? '' : 's' }}</h2>
+          <div><span>Subtotal</span><strong>₹{{ subtotal }}</strong></div>
+          <div><span>Delivery</span><strong>₹{{ deliveryCharge }}</strong></div>
+          <div><span>Handling</span><strong>₹{{ handlingCharge }}</strong></div>
+          <div class="order-summary__total"><span>Total</span><strong>₹{{ totalAmount }}</strong></div>
+          <p>Small-batch goods, packed by hand in India.</p>
+        </aside>
+      </div>
+
+      <div class="order-success" *ngIf="stage === 'success'" role="status" aria-live="polite">
+        <span class="order-success__icon"><i class="bi bi-check-lg"></i></span>
+        <span class="eyebrow">Order confirmed</span>
+        <h2>Thank you, {{ customerDetails.fullName }}.</h2>
+        <p>Your payment reference and order details have been sent to Ira Soaps. We’ll prepare your handmade items with care.</p>
+        <button type="button" class="btn-ira-primary" (click)="startAnotherOrder()"><i class="bi bi-bag"></i> Shop more</button>
+      </div>
+    </div>
+  </section>
+</main>

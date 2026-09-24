@@ -50,4 +50,8 @@ export class Cart {
   removeItem(id: string): void {
     this.cartItems.set(this.cartItems().filter(item => item.id !== id));
   }
+
+  clear(): void {
+    this.cartItems.set([]);
+  }
 }
