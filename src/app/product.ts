@@ -18,6 +18,37 @@ export class Product {
 
   readonly products: Products[] = [
     {
+      id: 'water-melon-bar',
+      name: 'Water Melon Soap',
+      img: 'assets/products/soaps/water-melon.png',
+      category: 'soaps',
+      tagline: 'Botanical, uplifting bar',
+      description:
+        'Beautifully scented with watermelon and a touch of mint, this bar gently cleanses while dried botanicals add a naturally beautiful finish to your bath ritual.',
+      price: 150,
+      size: '100 g bar',
+      ingredients: ['Glycerine', 'Black Sessame seeds', 'Goat-Milk', 'Cucumber Oil'],
+      icon: 'bar',
+      hasLiveSession: true
+    },
+
+    {
+      id: 'ocean-breeze-bar',
+      name: 'Ocean Breeze Soap',
+      img: 'assets/products/soaps/ocean-breeze.png',
+      category: 'soaps',
+      tagline: 'Botanical, uplifting bar',
+      description:
+        'An amazing ocean breeze bar that gently cleanses while dried botanicals add a naturally beautiful finish to your bath ritual.',
+      price: 150,
+      size: '100 g bar',
+      ingredients: ['Manjishta Powder', 'Glycerine', 'Coconut oil'],
+      icon: 'bar',
+      hasLiveSession: true
+    },
+
+
+    {
       id: 'honey-bar',
       name: 'Honey Soap',
       category: 'soaps',

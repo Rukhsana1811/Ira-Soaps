@@ -1,3 +1,193 @@
+.upi-payment-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+  background: rgb(25 20 24 / 65%);
+}
+
+.upi-payment-modal {
+  position: relative;
+  width: min(100%, 28rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 2rem;
+  text-align: center;
+  background: #fffaf5;
+  border-radius: 8px;
+  box-shadow: 0 1rem 3rem rgb(25 20 24 / 25%);
+}
+
+.upi-payment-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 0;
+  background: transparent;
+  color: #573f5d;
+}
+
+.upi-payment-modal__qr {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  margin: 1.25rem auto;
+}
+
+.upi-payment-modal__order {
+  font-size: 0.875rem;
+  color: #6c6267;
+}
+
+.upi-payment-modal__mobile-button,
+.upi-payment-modal__label,
+.upi-payment-modal input,
+.upi-payment-modal > .btn-ira-primary {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.upi-payment-modal__label {
+  display: block;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.upi-customer-form {
+  display: grid;
+  gap: 0.55rem;
+  text-align: left;
+}
+
+.upi-customer-form label {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ira-ink);
+}
+
+.upi-customer-form .form-control {
+  margin-top: 0;
+}
+
+.upi-payment-modal__proceed-button {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+.upi-payment-modal__help,
+.upi-payment-modal__error,
+.upi-payment-modal__success {
+  display: block;
+  margin-top: 0.35rem;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.upi-payment-modal__help {
+  color: #6c6267;
+}
+
+.upi-payment-modal__error {
+  color: #a33b32;
+}
+
+.upi-payment-modal__success {
+  color: #34704d;
+}
+
+.upi-payment-success,
+.upi-submission-success {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  margin-top: 1.25rem;
+  color: #34704d;
+  animation: upi-success-pop 360ms ease-out both;
+}
+
+.upi-submission-success {
+  position: fixed;
+  top: 1.5rem;
+  right: 0;
+  left: 0;
+  z-index: 1100;
+  width: min(calc(100% - 2rem), 24rem);
+  margin-inline: auto;
+  padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+  border: 1px solid rgb(52 112 77 / 20%);
+  border-radius: 8px;
+  background: #fffaf5;
+  box-shadow: 0 1rem 3rem rgb(25 20 24 / 20%);
+}
+
+.upi-submission-success__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: #573f5d;
+}
+
+.upi-payment-success__icon {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  margin-bottom: 0.35rem;
+  border-radius: 50%;
+  background: #34704d;
+  color: #fffaf5;
+  font-size: 1.75rem;
+  box-shadow: 0 0 0 0.5rem rgb(52 112 77 / 12%);
+}
+
+.upi-payment-success > span:last-child {
+  font-size: 0.8rem;
+  color: #6c6267;
+}
+
+@keyframes upi-success-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.65) translateY(0.5rem);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.08) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .upi-payment-backdrop {
+    place-items: start center;
+    padding: 0.75rem;
+  }
+
+  .upi-payment-modal {
+    width: 100%;
+    max-height: calc(100dvh - 1.5rem);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .upi-payment-modal__qr {
+    width: min(60vw, 13rem);
+    height: auto;
+    aspect-ratio: 1;
+    margin: 1rem auto;
+  }
+}
 .ira-product-card {
   display: flex;
   flex-direction: column;
@@ -61,8 +251,12 @@
   span { font-size: 0.72rem; color: var(--ira-sage); font-family: var(--font-mono); }
 }
 
-img {
-  height:300px;
+.ira-product-card__image {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
 }
 
 
