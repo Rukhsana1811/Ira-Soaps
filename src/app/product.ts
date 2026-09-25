@@ -40,7 +40,7 @@ export class Product {
       tagline: 'Botanical, uplifting bar',
       description:
         'An amazing ocean breeze bar that gently cleanses while dried botanicals add a naturally beautiful finish to your bath ritual.',
-      price: 150,
+      price: 170,
       size: '100 g bar',
       ingredients: ['Manjishta Powder', 'Glycerine', 'Coconut oil'],
       icon: 'bar',
@@ -140,7 +140,7 @@ export class Product {
       tagline: 'Botanical all-rounder',
       description:
         'A layered herbal bar combining traditional powders with a creamy lather to cleanse, polish and refresh the skin.',
-      price: 150,
+      price: 180,
       size: '100 g bar',
       ingredients: ['Rose powder', 'Charcoal powder', 'Manjishtha', 'Glycerine'],
       icon: 'bar',
@@ -187,104 +187,6 @@ export class Product {
       ingredients: ['Turmeric', 'Sandalwood', 'Coconut oil'],
       icon: 'bar',
       hasLiveSession: true
-    },
-    {
-      id: 'reetha-shikakai-shampoo',
-      name: 'Reetha–Shikakai',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'shampoo',
-      tagline: 'One bar, ~80 washes',
-      description:
-        'A traditional reetha and shikakai base, melt & poured into a bar form — no plastic bottle, no sulphates, gentle enough for colour-treated hair.',
-      price: 299,
-      size: '90 g bar',
-      ingredients: ['Reetha (soapnut)', 'Shikakai', 'Amla', 'Coconut oil'],
-      icon: 'bar',
-      hasLiveSession: true
-    },
-    {
-      id: 'onion-hibiscus-shampoo',
-      name: 'Onion & Hibiscus',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'shampoo',
-      tagline: 'For strengthening & shine',
-      description:
-        'Onion extract and hibiscus, known for supporting hair strength, worked into a rich lathering bar with no synthetic silicones.',
-      price: 370,
-      size: '250 ml',
-      ingredients: ['Onion extract', 'Hibiscus', 'Fenugreek', 'Coconut oil'],
-      icon: 'bottle',
-      hasLiveSession: false
-    },
-    {
-      id: 'blue-pea-hibiscus-shampoo',
-      name: 'Blue Pea & Hibiscus',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'shampoo',
-      tagline: 'For strengthening & shine',
-      description:
-        'Blue pea extract and hibiscus, known for supporting hair strength, worked into a rich lathering bar with no synthetic silicones.',
-      price: 390,
-      size: '250 ml',
-      ingredients: ['Blue Pea', 'Hibiscus', 'Fenugreek', 'Lavendar Hydrosol'],
-      icon: 'bar',
-      hasLiveSession: false
-    },
-    {
-      id: 'rosewater-facewash',
-      name: 'Rosewater Cream Face Wash',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'face-wash',
-      tagline: 'Daily, all skin types',
-      description:
-        'A soft, low-lather cream wash built on rosewater and oat protein — cleans without the tight, dry after-feel of commercial face washes.',
-      price: 349,
-      size: '100 ml jar',
-      ingredients: ['Rosewater', 'Oat protein', 'Aloe vera', 'Jojoba oil'],
-      icon: 'jar',
-      hasLiveSession: true
-    },
-    {
-      id: 'turmeric-gram-facewash',
-      name: 'Turmeric & Gram Flour Wash',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'face-wash',
-      tagline: 'Brightening, gentle exfoliant',
-      description:
-        'A reinvented ubtan — gram flour and turmeric in a gentle wash base for everyday use, no artificial colour or synthetic scrub beads.',
-      price: 329,
-      size: '100 ml jar',
-      ingredients: ['Gram flour', 'Turmeric', 'Sandalwood', 'Milk cream'],
-      icon: 'jar',
-      hasLiveSession: false
-    },
-    {
-      id: 'lavender-body-wash',
-      name: 'Lavender & Oat Body Wash',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'shower-gel',
-      tagline: 'Calming, everyday lather',
-      description:
-        'A plant-derived surfactant base with real lavender oil and colloidal oat, formulated to lather softly without foam boosters.',
-      price: 399,
-      size: '250 ml bottle',
-      ingredients: ['Lavender oil', 'Colloidal oat', 'Coco-glucoside', 'Aloe vera'],
-      icon: 'bottle',
-      hasLiveSession: false
-    },
-    {
-      id: 'citrus-mint-shower-gel',
-      name: 'Citrus & Mint Shower Gel',
-      img: 'assets/oat-honey-bar.jpeg',
-      category: 'shower-gel',
-      tagline: 'Bright, energising wash',
-      description:
-        'Cold-pressed citrus peel oils and peppermint in a light, chemical-free gel base — a wake-up shower without synthetic fragrance overload.',
-      price: 399,
-      size: '250 ml bottle',
-      ingredients: ['Citrus peel oil', 'Peppermint oil', 'Coco-glucoside'],
-      icon: 'bottle',
-      hasLiveSession: false
     },
     {
       id: 'concrete-2-vase-with-tray',

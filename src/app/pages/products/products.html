@@ -7,31 +7,30 @@
 </section>
 
 <section class="pt-0">
-  <div class="container-ira">
-    <div class="ira-filter" role="tablist" aria-label="Filter products by category">
-      <button
-        type="button"
-        *ngFor="let cat of categories"
-        role="tab"
-        [attr.aria-selected]="activeCategory === cat.id"
+  <div class="container-ira shop-products-layout">
+    <aside class="shop-products-filter" aria-label="Filter products">
+      <span class="eyebrow">Browse by category</span>
+      <button *ngFor="let cat of categories" type="button"
         [class.active]="activeCategory === cat.id"
-        (click)="selectCategory(cat.id)"
-      >
+        [attr.aria-pressed]="activeCategory === cat.id"
+        (click)="selectCategory(cat.id)">
         {{ cat.label }}
       </button>
-    </div>
+    </aside>
 
-    <div class="row g-4" *ngIf="visible.length; else empty">
-      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of visible">
-        <app-product-card [product]="product"></app-product-card>
+    <div class="shop-products-results">
+      <div class="row g-4" *ngIf="visible.length; else empty">
+        <div class="col-12 col-sm-6 col-lg-6" *ngFor="let product of visible">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
       </div>
-    </div>
 
-    <ng-template #empty>
-      <div class="ira-empty">
-        <i class="bi bi-basket"></i>
-        <p>No products in this category yet — check back soon, or ask us on WhatsApp.</p>
-      </div>
-    </ng-template>
+      <ng-template #empty>
+        <div class="ira-empty">
+          <i class="bi bi-basket"></i>
+          <p>No products in this category yet — check back soon, or ask us on WhatsApp.</p>
+        </div>
+      </ng-template>
+    </div>
   </div>
 </section>

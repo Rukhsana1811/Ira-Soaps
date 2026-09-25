@@ -1,0 +1,77 @@
+.raw-material-card {
+    height: 100%;
+    overflow: hidden;
+
+    &__image {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    &__body {
+        padding: 1.25rem;
+    }
+
+    h3 {
+        margin: .45rem 0;
+    }
+
+    p {
+        color: rgba(34, 39, 29, .72);
+        min-height: 48px;
+    }
+
+    &__footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .75rem;
+    }
+
+    &__price {
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__price strong {
+        font-size: 1.2rem;
+    }
+
+    &__price span {
+        font-size: .78rem;
+        color: var(--ira-sage);
+    }
+
+    &__quantity {
+        display: inline-flex;
+        align-items: center;
+        gap: .7rem;
+        border: 1px solid var(--ira-line);
+        border-radius: 999px;
+        padding: .25rem .5rem;
+    }
+
+    &__quantity button {
+        border: 0;
+        background: transparent;
+        color: var(--ira-forest);
+    }
+
+    &__actions {
+        display: flex;
+        gap: .45rem;
+        width: 100%;
+    }
+
+    &__actions button {
+        flex: 1;
+    }
+}
+
+.eyebrow {
+    color: var(--ira-honey);
+}
+
+.eyebrow:before {
+    background: var(--ira-honey);
+}

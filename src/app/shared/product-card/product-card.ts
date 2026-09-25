@@ -13,11 +13,20 @@ import { Cart } from '../../cart';
 })
 export class ProductCard {
   @Input({ required: true }) product!: Products;
+  quantity = 1;
 
   constructor(
     private cart: Cart,
     private router: Router
   ) { }
+
+  decrease(): void {
+    this.quantity = Math.max(1, this.quantity - 1);
+  }
+
+  increase(): void {
+    this.quantity += 1;
+  }
 
   addToCart(): void {
     this.cart.addItem({
@@ -27,7 +36,7 @@ export class ProductCard {
       type: 'product',
       unitOrDate: this.product.size,
       image: this.product.img
-    });
+    }, this.quantity);
   }
 
   checkoutProduct(): void {

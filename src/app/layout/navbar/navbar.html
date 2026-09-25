@@ -16,6 +16,7 @@
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Home</a>
       <a routerLink="/about" routerLinkActive="active" (click)="close()">About Us</a>
       <a routerLink="/products" routerLinkActive="active" (click)="close()">Shop</a>
+      <a routerLink="/raw-materials" routerLinkActive="active" (click)="close()">Raw materials</a>
       <a class="ira-nav__cart" routerLink="/order" routerLinkActive="active" (click)="close()">
         <i class="bi bi-cart3"></i> Cart <span>{{ cart.totalItems() }}</span>
       </a>

@@ -1,0 +1,32 @@
+<section class="ira-shop-header">
+  <div class="container-ira">
+    <span class="eyebrow">For makers</span>
+    <h1>Raw materials & DIY kits</h1>
+    <p>Everything you need to make soaps, hair care, body care and concrete art at home.</p>
+  </div>
+</section>
+
+<section class="pt-0">
+  <div class="container-ira raw-materials-layout">
+    <aside class="raw-materials-filter" aria-label="Filter raw materials">
+      <span class="eyebrow">Browse by category</span>
+      <button *ngFor="let category of allCategories" type="button"
+        [class.active]="activeCategory === category.id"
+        [attr.aria-pressed]="activeCategory === category.id"
+        (click)="selectCategory(category.id)">
+        {{ category.label }}
+      </button>
+    </aside>
+
+    <div class="raw-materials-results">
+      <div class="row g-4" *ngIf="visible.length; else empty">
+        <div class="col-12 col-md-6" *ngFor="let material of visible">
+          <app-raw-material-card [material]="material"></app-raw-material-card>
+        </div>
+      </div>
+      <ng-template #empty>
+        <div class="ira-empty"><i class="bi bi-basket"></i><p>No raw materials in this category yet.</p></div>
+      </ng-template>
+    </div>
+  </div>
+</section>

@@ -237,8 +237,8 @@
 }
 
 .ira-product-card__media {
+  height: 220px;
   background: linear-gradient(160deg, #eee7d3, #e3dcc5);
-  padding: 2.25rem 1.5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -246,13 +246,13 @@
 }
 
 .ira-product-card__body {
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   flex: 1;
 
-  h3 { font-size: 1.2rem; margin: 0.35rem 0 0.5rem; }
-  p { font-size: 0.9rem; color: rgba(34, 39, 29, 0.75); flex: 1; }
+  h3 { font-size: 1.2rem; margin: 0.45rem 0; }
+  p { font-size: 0.9rem; color: rgba(34, 39, 29, 0.75); min-height: 48px; }
 }
 
 .ira-product-card__ingredients {
@@ -276,26 +276,40 @@
 
 .ira-product-card__footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
-  border-top: 1px dashed var(--ira-line);
-  padding-top: 1rem;
 }
 
 .ira-product-card__price {
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 
-  strong { font-family: var(--font-display); font-size: 1.15rem; }
-  span { font-size: 0.72rem; color: var(--ira-sage); font-family: var(--font-mono); }
+  strong { font-family: var(--font-display); font-size: 1.2rem; }
+  span { font-size: 0.78rem; color: var(--ira-sage); font-family: var(--font-mono); }
+}
+
+.ira-product-card__quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  border: 1px solid var(--ira-line);
+  border-radius: 999px;
+  padding: .25rem .5rem;
+}
+
+.ira-product-card__quantity button {
+  border: 0;
+  background: transparent;
+  color: var(--ira-forest);
 }
 
 .ira-product-card__image {
   display: block;
   width: 100%;
-  height: 300px;
+  height: 220px;
   object-fit: contain;
   object-position: center;
 }
@@ -335,13 +349,10 @@
 
 .ira-product-card__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: flex-end;
+  gap: 0.45rem;
+  width: 100%;
 }
 
-.ira-product-card__actions .btn-ira-primary,
-.ira-product-card__actions .btn-ira-outline {
-  padding: 0.65rem 0.95rem;
-  font-size: 0.82rem;
+.ira-product-card__actions button {
+  flex: 1;
 }

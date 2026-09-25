@@ -1,0 +1,52 @@
+.raw-materials-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.raw-materials-filter {
+    position: sticky;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    padding: 1rem;
+    background: var(--ira-card);
+    border: 1px solid var(--ira-line);
+    border-radius: 1rem;
+}
+
+.raw-materials-filter button {
+    text-align: left;
+    border: 0;
+    border-radius: .6rem;
+    padding: .65rem .75rem;
+    background: transparent;
+    color: var(--ira-ink);
+    font: inherit;
+}
+
+.raw-materials-filter button:hover,
+.raw-materials-filter button.active {
+    background: var(--ira-forest);
+    color: var(--ira-cream);
+}
+
+@media (max-width: 767px) {
+    .raw-materials-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .raw-materials-filter {
+        position: static;
+    }
+}
+
+.eyebrow {
+    color: var(--ira-honey);
+}
+
+.eyebrow:before {
+    background: var(--ira-honey);
+}

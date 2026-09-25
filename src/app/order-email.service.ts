@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
 import { Products } from './products';
 
+export type OrderProduct = Pick<Products, 'name' | 'price' | 'size'>;
+
 export interface OrderEmailData {
-  product: Products;
+  product: OrderProduct;
   quantity: number;
   subtotal: number;
   deliveryCharge: number;

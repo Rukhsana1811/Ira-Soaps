@@ -234,3 +234,11 @@
   .order-quantity { grid-column: 2; width: fit-content; }
   .order-item__total { grid-column: 2; text-align: left; }
 }
+
+
+.eyebrow {
+  color: black;
+  &::before{
+    background: black;
+  }
+}

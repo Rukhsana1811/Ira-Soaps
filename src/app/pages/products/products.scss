@@ -6,30 +6,11 @@
   p { color: rgba(34, 39, 29, 0.75); max-width: 560px; }
 }
 
-.ira-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 2.5rem;
-
-  button {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 0.55rem 1.15rem;
-    border-radius: 999px;
-    border: 1.5px solid var(--ira-line);
-    background: var(--ira-card);
-    color: var(--ira-ink);
-    transition: all 0.2s ease;
-  }
-  button:hover { border-color: var(--ira-sage); }
-  button.active {
-    background: var(--ira-forest);
-    border-color: var(--ira-forest);
-    color: var(--ira-cream);
-  }
-}
+.shop-products-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; align-items: start; }
+.shop-products-filter { position: sticky; top: 1rem; display: flex; flex-direction: column; gap: .45rem; padding: 1rem; background: var(--ira-card); border: 1px solid var(--ira-line); border-radius: 1rem; }
+.shop-products-filter button { text-align: left; border: 0; border-radius: .6rem; padding: .65rem .75rem; background: transparent; color: var(--ira-ink); font: inherit; }
+.shop-products-filter button:hover, .shop-products-filter button.active { background: var(--ira-forest); color: var(--ira-cream); }
+@media (max-width: 767px) { .shop-products-layout { grid-template-columns: 1fr; } .shop-products-filter { position: static; } }
 
 .ira-empty {
   text-align: center;

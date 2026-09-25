@@ -17,6 +17,11 @@
         <strong>&#8377;{{ product.price }}</strong>
         <span>{{ product.size }}</span>
       </div>
+      <div class="ira-product-card__quantity" aria-label="Quantity">
+        <button type="button" aria-label="Decrease quantity" (click)="decrease()"><i class="bi bi-dash"></i></button>
+        <span>{{ quantity }}</span>
+        <button type="button" aria-label="Increase quantity" (click)="increase()"><i class="bi bi-plus"></i></button>
+      </div>
       <div class="ira-product-card__actions">
         <button type="button" class="btn-ira-outline" (click)="addToCart()">
           <i class="bi bi-cart-plus"></i> Add to cart

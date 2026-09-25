@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Cart, CartItem } from '../../cart';
 import { Product } from '../../product';
+import { RawMaterialService } from '../../raw-material.service';
 import { OrderEmailData, OrderEmailService } from '../../order-email.service';
 import { UpiPaymentRequest, UpiService } from '../../upi.service';
 
@@ -37,6 +38,7 @@ export class Order {
   constructor(
     public cart: Cart,
     private productService: Product,
+    private rawMaterialService: RawMaterialService,
     private upiService: UpiService,
     private orderEmailService: OrderEmailService,
     private router: Router
@@ -102,7 +104,7 @@ export class Order {
       return;
     }
 
-    const firstProduct = this.productService.getById(this.items[0].id);
+    const firstProduct = this.orderProduct(this.items[0]);
     if (!firstProduct) {
       this.customerDetailsError = 'One of the products in your cart is no longer available.';
       return;
@@ -128,7 +130,7 @@ export class Order {
       return;
     }
 
-    const firstProduct = this.productService.getById(this.items[0].id);
+    const firstProduct = this.orderProduct(this.items[0]);
     if (!firstProduct) {
       this.emailError = 'The product could not be found. Please return to the shop and try again.';
       return;
@@ -168,5 +170,15 @@ export class Order {
 
   startAnotherOrder(): void {
     void this.router.navigate(['/products']);
+  }
+
+  private orderProduct(item: CartItem): { name: string; price: number; size: string } | undefined {
+    if (item.type === 'raw_material') {
+      const material = this.rawMaterialService.getById(item.id);
+      return material ? { name: material.name, price: material.price, size: material.size } : undefined;
+    }
+
+    const product = this.productService.getById(item.id);
+    return product ? { name: product.name, price: product.price, size: product.size } : undefined;
   }
 }
